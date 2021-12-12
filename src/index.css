@@ -1,5 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+#root{
+  height: 100%;
+  width: 100%;
+}
+
 body {
   margin: 0;
+  height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +20,29 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.app{
+  height: 100%;
+  width: 100%;
+  background-color: grey;
+}
+
+
+.container{
+  width: 480px;
+  height: 854px;
+  margin: auto;
+  background-color: white;
+}
+
+.hidden{
+  display: none;
+}
+
+@media only screen and (max-width: 768px)  {
+  .container{
+    width: 100%;
+    height: 100%;
+  }
 }

@@ -1,0 +1,77 @@
+.landing{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.banner{
+	flex: .6;
+	background-color: red;
+	width: 100%;
+	background-image: url('https://via.placeholder.com/700');	
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	border-radius: 0 0 0 20%;
+}
+
+.banner.out{
+	flex: 0;
+	transition: flex 1s;
+}
+
+.header{
+	flex: .2;
+	width: 100%;
+	padding-top: 30px;
+	background-color: white;
+}
+
+.header .corridor_name{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight:500;
+	color: #A8ACAE;
+	font-size: 2em;
+	text-transform: uppercase;
+}
+
+.header .title{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	font-size: 4em;
+
+}
+
+.cta{
+	flex: .2;
+	width: 100%;
+	height: 10%;
+	background-color: white;
+}
+
+.btn{
+	background-color: #77528C;
+	border-radius: 25px;
+	width: 80%;
+	height: 50px;
+	color: white;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor: pointer;
+	margin-bottom: 5px;
+}
+
+.modeSelection{
+	padding-top: 50px;
+	padding-bottom: 40px;
+	background-color: white;
+}
+
