@@ -1,0 +1,19 @@
+.faceChoice{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    
+}
+.faceChoice > .option{
+    margin-bottom: 5%;
+    margin-top: 0%;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: xxx-large;
+    font-weight:normal;
+}
+
+.option.active{
+    font-weight: bold;
+}

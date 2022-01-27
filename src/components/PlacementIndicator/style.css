@@ -1,0 +1,20 @@
+.placementIndicator{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.navDot{
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;;
+    background-color: #70716f;
+}
+
+.navDot.active{
+    background-color: #dadee2;
+}

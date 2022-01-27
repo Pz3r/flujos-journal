@@ -1,0 +1,19 @@
+.checkbox{
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+    
+}
+
+.checkbox > .option{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.checkLabel{
+    text-transform: capitalize;
+    font-size: x-large;
+    margin-left: 10px;
+}
+

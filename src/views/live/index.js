@@ -13,7 +13,7 @@ function useQuery() {
   }
 
 
-const Home = ()=>{
+const Live = ()=>{
 	const [selectingMode, setSelectingMode] = useState(false)
 
 	var search = window.location.search.substring(1);
@@ -44,7 +44,7 @@ const Home = ()=>{
 				</div>
 				<div className={classNames("cta", {"hidden": selectingMode})}>
 					<div className="btn" onClick={setSelectingMode}>
-						Select Mode
+						Show Query Params
 					</div>
 				</div>
 				<div className={classNames("modeSelection", {"hidden": !selectingMode})}>
@@ -62,4 +62,4 @@ const Home = ()=>{
 	)	
 }
 
-export default Home
+export default Live

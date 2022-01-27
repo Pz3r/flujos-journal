@@ -1,0 +1,16 @@
+MVP:
+- journaling domain name? @done
+    - might need a less crazy domain. @done
+
+- create form modules 
+    - v1 form questions
+    - v1 ui modules
+
+- create querystring for fake data
+    - querystring to be passed to the request back to DB
+
+- create page module for next / back
+    - state management? 
+
+- create post request to UCLA endpoint
+    - using API Key in header

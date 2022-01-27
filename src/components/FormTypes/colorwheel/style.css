@@ -1,0 +1,10 @@
+.colorWheel{
+    width: 100%;
+    height: 100%;
+    
+}
+
+.wheel img{
+    pointer-events: painted;
+}
+

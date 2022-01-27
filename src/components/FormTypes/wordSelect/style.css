@@ -1,0 +1,18 @@
+.wordSelect{
+    display: inline-flex;
+    flex-wrap: wrap;
+    padding: 10%;
+    
+}
+.option{
+    margin-bottom: 5%;
+    margin-top: 5%;
+    text-transform: capitalize;
+    flex: 40%;
+    font-size: larger;
+    font-weight: normal;
+}
+
+.option.active{
+    font-weight: bold;
+}
