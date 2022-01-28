@@ -6,14 +6,20 @@
     
 }
 .faceChoice > .option{
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 5%;
     margin-top: 0%;
     text-align: center;
     text-transform: capitalize;
     font-size: xxx-large;
     font-weight:normal;
+    border-radius: 30px;
+    padding: 5px;
+    width: 50%;
 }
 
 .option.active{
     font-weight: bold;
+    background-color: #A7A9AC;
 }

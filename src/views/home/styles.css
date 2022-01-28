@@ -32,7 +32,7 @@
 	align-items: center;
 	justify-content: center;
 	font-weight:500;
-	color: #A8ACAE;
+	color: #818181;
 	font-size: 2em;
 	text-transform: uppercase;
 }
@@ -43,6 +43,7 @@
 	justify-content: center;
 	font-weight: bold;
 	font-size: 4em;
+	color: #191A18;
 
 }
 
@@ -54,7 +55,7 @@
 }
 
 .btn{
-	background-color: #77528C;
+	background-color: #8A57A4;
 	border-radius: 25px;
 	width: 80%;
 	height: 50px;
