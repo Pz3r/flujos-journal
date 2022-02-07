@@ -1,9 +1,13 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { useLocation } from 'react-router';
 import classNames from 'classnames'
 import ReactJson from 'react-json-view'
 import './styles.css'
 import { Link } from 'react-router-dom';
+import ColorWheel from '../../components/FormTypes/colorwheel';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExclamation, faUsers, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { SubmitData } from '../../utils/clientActions';
 
 
 function useQuery() {
@@ -15,6 +19,7 @@ function useQuery() {
 
 const Live = ()=>{
 	const [selectingMode, setSelectingMode] = useState(false)
+	const [selectedColor, setSelectedColor] = useState(null)
 
 	var search = window.location.search.substring(1);
 	var params = {}
@@ -28,34 +33,51 @@ const Live = ()=>{
 		setSelectingMode(true)
 	}
 
+	useEffect(()=>{
+		if(selectedColor == null) return
+		let timeout = setTimeout(()=>{
+			setSelectedColor(null)
+		}, 1000);
+		return(()=>{
+			clearTimeout(timeout)
+		})
+	}, [selectedColor])
+
+	const userInput = (input)=>{
+		SubmitData({type: "live", data:input, user: 'test', time: Date.now()}).then((response)=>{})
+	}
+
 
 	return (
 		<div className="container">
 			<div className="landing">
-				<div className={classNames("banner", {"out": selectingMode})}>
-				</div>
-				<div className={classNames("header", {"selectingMode": selectingMode})}>
+				<div className={classNames("header")}>
 					<div className="corridor_name">
 						Corridor
 					</div>
 					<div className="title">
-						Journaling
+						LIVE
 					</div>
-				</div>
-				<div className={classNames("cta", {"hidden": selectingMode})}>
-					<div className="btn" onClick={setSelectingMode}>
-						Show Query Params
+					<div>
+						<ColorWheel OnUpdate={(e)=>{userInput({color: e})}} Answer={selectedColor}/>
 					</div>
-				</div>
-				<div className={classNames("modeSelection", {"hidden": !selectingMode})}>
-
-					<Link className='btn' to="/live">Live</Link>
-					<Link className='btn' to="/reflection">Reflection</Link>
-
-					<ReactJson src={params}/>
-				</div>
-				<div className={classNames("map", {"in": selectingMode})}>
-
+					<div className='live_buttons'>
+						<div className='hazard' onClick={ (e)=>{ userInput({type: "hazard"}) } }>
+							<div className='iconContainer'>
+								<FontAwesomeIcon icon={faExclamation} color='white' size='4x'/>
+							</div>
+						</div>
+						<div className='togetherness' onClick={ (e)=>{ userInput({type: "togetherness"}) } }>
+							<div className='iconContainer'>
+								<FontAwesomeIcon icon={faUsers} color='white' size='4x'/>
+							</div>
+						</div>
+						<div className='enjoyability' onClick={ (e)=>{ userInput({type: "enjoyability"}) } }>
+							<div className='iconContainer'>
+								<FontAwesomeIcon icon={faThumbsUp} color='white' size='4x'/>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

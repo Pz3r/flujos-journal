@@ -8,6 +8,7 @@ import PlacementIndicator from '../../components/PlacementIndicator';
 import Form from '../../components/_form';
 import NavigationButtons from '../../components/NavigationButtons';
 import SubmitButton from '../../components/SubmitButton';
+import { SubmitData } from '../../utils/clientActions';
 
 
 function useQuery() {
@@ -42,22 +43,26 @@ let ExampleJournal = [
 ]
 
 const Reflection = ()=>{
-	const [selectingMode, setSelectingMode] = useState(false)
     const [position, setPosition] = useState(0)
     const [journalInputs, setJournalInputs] = useState(new Array(ExampleJournal.length).fill(null))
     const [showSubmit, setShowSubmit] = useState(false)
+    const [loading, setLoading] = useState(false)
 
-	var search = window.location.search.substring(1);
-	var params = {}
-	try{
-		params = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}')
-	} catch (e){
-		console.log('no params')
-	}
 
-	const onSelectMode = ()=>{
-		setSelectingMode(true)
-	}
+    const _saveAnswers = (answer)=>{
+        setJournalInputs((prev)=>{
+            let temp = [...prev]
+            temp[position] = answer
+            return temp
+        })
+    }
+
+    const _submitAnswers = async()=>{
+        setLoading(true)
+        SubmitData({type: "reflection", data:journalInputs, user: 'test'}).then((response)=>{
+            setLoading(false)
+        })
+    }
 
     const GoNext = ()=>{
 
@@ -81,14 +86,6 @@ const Reflection = ()=>{
         }
     }
 
-    const _saveAnswers = (answer)=>{
-        setJournalInputs((prev)=>{
-            let temp = [...prev]
-            temp[position] = answer
-            return temp
-        })
-    }
-
 
     console.log(journalInputs)
 	return (
@@ -99,7 +96,7 @@ const Reflection = ()=>{
                     <Form Form={ExampleJournal[position]} Answer={journalInputs[position]} SaveAnswers={_saveAnswers}/>
                 </div>
                 <div className='action'>
-                    <NavigationButtons OnNext={GoNext} OnBack={GoBack} ShowSubmit={position == ExampleJournal.length-1} OnSubmit={()=>{console.log('submitting answers')}}/>
+                    <NavigationButtons OnNext={GoNext} OnBack={GoBack} ShowSubmit={position == ExampleJournal.length-1} OnSubmit={_submitAnswers}/>
                 </div>
 			</div>
 		</div>
