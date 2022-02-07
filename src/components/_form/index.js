@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import Checkbox from '../FormTypes/checkbox'
 import ColorWheel from '../FormTypes/colorwheel'
 import FaceChoice from '../FormTypes/faceChoice'
+import ImageUpload from '../FormTypes/imageUpload'
 import WordSelect from '../FormTypes/wordSelect'
 import './style.css'
 const Form = ({Form, Answer, SaveAnswers})=>{
@@ -14,7 +15,8 @@ const Form = ({Form, Answer, SaveAnswers})=>{
         "faceChoice": FaceChoice,
         "wordSelect": WordSelect,
         "checkbox": Checkbox,
-        "colorWheel": ColorWheel
+        "colorWheel": ColorWheel,
+        "imageUpload": ImageUpload
     }
 
     let SelectedForm = FormType[Form.formType]

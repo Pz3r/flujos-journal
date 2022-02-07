@@ -1,0 +1,16 @@
+.imageUpload{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	background-color: #2D2D51;
+	justify-content: space-between;
+}
+
+.body{
+	height: 75%;
+	margin-bottom: 30px;
+}
+
+.action{
+	height: 10%;
+}

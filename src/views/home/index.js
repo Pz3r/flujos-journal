@@ -49,10 +49,8 @@ const Home = ()=>{
 				</div>
 				<div className={classNames("modeSelection", {"hidden": !selectingMode})}>
 
-					<Link className='btn' to="/live">Live</Link>
 					<Link className='btn' to="/reflection">Reflection</Link>
-
-					<ReactJson src={params}/>
+					<Link className='btn' to="/upload">Upload a Photo</Link>
 				</div>
 				<div className={classNames("map", {"in": selectingMode})}>
 
