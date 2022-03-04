@@ -1,0 +1,17 @@
+.thankyou{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	background-color: #2D2D51;
+	justify-content: space-between;
+}
+
+.body{
+	margin-top: 55px;
+	height: 75%;
+	margin-bottom: 30px;
+}
+
+.action{
+	height: 10%;
+}

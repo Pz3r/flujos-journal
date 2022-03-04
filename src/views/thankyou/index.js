@@ -4,14 +4,14 @@ import { useNavigate } from "react-router-dom";
 import Form from "../../components/_form";
 
 import NavigationButtons from "../../components/NavigationButtons";
-
+import image from '../../assets/thankyou.png'
 
 import './style.css'
 
 let blankForm = { 
-    prompt: "Upload photos of your ride:", 
-    formType: "imageUpload", 
-    options: ["1", "2", "3", "4", "5"]
+    prompt: "Thank you!", 
+    formType: "image", 
+    options: {src:image, caption: "Your submissions were added to the Interactive Cartography system."}
 }
 
 const ImageUpload = () => {
@@ -28,12 +28,9 @@ const ImageUpload = () => {
 
     return (
         <div className="container">
-            <div className="imageUpload">
+            <div className="thankyou">
                 <div className="body">
                     <Form Form={blankForm}></Form>
-                </div>
-                <div className="action">
-                    <NavigationButtons OnBack={GoBack} ShowSubmit={true} OnSubmit={_submitAnswers}/>
                 </div>
             </div>
         </div>
