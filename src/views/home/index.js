@@ -32,8 +32,6 @@ const Home = ()=>{
 	return (
 		<div className="container">
 			<div className="landing">
-				<div className={classNames("banner", {"out": selectingMode})}>
-				</div>
 				<div className={classNames("header", {"selectingMode": selectingMode})}>
 					<div className="corridor_name">
 						Corridor
@@ -42,14 +40,10 @@ const Home = ()=>{
 						Journaling
 					</div>
 				</div>
-				<div className={classNames("cta", {"hidden": selectingMode})}>
-					<div className="btn" onClick={setSelectingMode}>
-						Select Mode
-					</div>
-				</div>
-				<div className={classNames("modeSelection", {"hidden": !selectingMode})}>
+				<div className={classNames("modeSelection")}>
 
 					<Link className='btn' to="/reflection">Reflection</Link>
+					<Link className='btn' to="/live">Live</Link>
 					<Link className='btn' to="/upload">Upload a Photo</Link>
 				</div>
 				<div className={classNames("map", {"in": selectingMode})}>
