@@ -4,13 +4,18 @@ import classNames from "classnames"
 
 import './style.css'
 
+import Bad from '../../../assets/Bad.png'
+import Meh from '../../../assets/Meh.png'
+import Okay from '../../../assets/Okay.png'
+import Good from '../../../assets/Good.png'
+import Great from '../../../assets/Great.png'
 
 let Faces = [
-    <FontAwesomeIcon icon={faTired}/>,
-    <FontAwesomeIcon icon={faFrown}/>,
-    <FontAwesomeIcon icon={faMeh}/>,
-    <FontAwesomeIcon icon={faSmile}/>,
-    <FontAwesomeIcon icon={faGrinBeam}/>
+    <img src={Bad}/>,
+    <img src={Meh}/>,
+    <img src={Okay}/>,
+    <img src={Good}/>,
+    <img src={Great}/>
 ]
 
 
@@ -21,10 +26,10 @@ const FaceChoice = ({Options, Answer, OnUpdate})=>{
     }
 
     return(
-        <div className="faceChoice">
+        <div className={'faceChoice'}>
             {Options.map((e, i) =>(
-            <div className={classNames('option', {"active": i==Answer})} onClick={()=>{_handleUpdate(i)}}>
-                {Faces[i]} — {e}
+            <div className={classNames('option', {'active': i==Answer})} onClick={()=>{_handleUpdate(i)}}>
+                {Faces[i]}
             </div>
             ))}
         </div>

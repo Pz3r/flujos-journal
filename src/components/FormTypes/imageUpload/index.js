@@ -2,6 +2,9 @@ import { useState } from "react"
 
 import './style.css'
 
+import tempImage from '../../../assets/Placeholder.png'
+import classNames from "classnames"
+
 const ImageUpload = ({Options, Answer, OnUpdate})=>{
     const [image, setImage] = useState(null)
 
@@ -14,9 +17,9 @@ const ImageUpload = ({Options, Answer, OnUpdate})=>{
 
     return(
         <div className="imageUploadForm">
-            <img src={image}/>
+            <img src={image?image:tempImage}/>
             <div className="buttonGroup">
-                <button className="btn">Cancel</button>
+                <button className="btn" disabled={!image}>Cancel</button>
 
                 <label class="btn">
                     Upload

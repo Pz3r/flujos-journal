@@ -12,6 +12,7 @@ const ColorWheel = ({Options, Answer, OnUpdate})=>{
     return(
         <div className="colorWheel">
             <CircularInput OnSelect={_handleUpdate} Selected={Answer}/>
+            <div className="CTA">Tap On A Color</div>
         </div>
     )
 }

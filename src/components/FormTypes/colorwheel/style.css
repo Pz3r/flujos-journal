@@ -7,3 +7,14 @@
 .wheel img{
     pointer-events: painted;
 }
+
+.colorWheel .CTA{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    color: rgba(0, 0, 0, 0.3);
+}

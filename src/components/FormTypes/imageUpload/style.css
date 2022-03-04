@@ -2,19 +2,19 @@
     display: flex;
     flex-direction: column;
     align-content: center;
+    width: 75%;
     height: 100%;
+    margin: auto;
 }
 
 .imageUploadForm > img{
-    width: 75%;
+    width: 100%;
     min-height: 50%;
-    background-color: gray;
     max-height: 75%;
     object-fit: cover;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 75px 75px 0px 75px;
-    margin-bottom: 15px;
+    border-radius: 15px;
 }
 
 
@@ -32,6 +32,10 @@
     margin: 0;
 }
 
+.imageUploadForm  .btn:disabled{
+    background-color: #28AFA866;
+}
+
 .imageUploadForm input[type="file"] {
     display: none;
 }
@@ -42,5 +46,5 @@
     flex-direction: row;
     justify-content: flex-end;
     width: 75%;
-    margin: 0 auto;
+    margin: 15px 0 0 auto;
 }

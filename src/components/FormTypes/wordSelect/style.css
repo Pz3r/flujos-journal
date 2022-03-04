@@ -2,9 +2,10 @@
     display: inline-flex;
     flex-wrap: wrap;
     padding: 10%;
-    gap:5px
+    gap:5px;
+    padding-top: 0;
 }
-.option{
+.wordSelect .option{
     margin-bottom: 5%;
     margin-top: 5%;
     text-transform: capitalize;
@@ -15,6 +16,6 @@
     padding: 5px;
 }
 
-.option.active{
+.wordSelect .option.active{
     font-weight: bold;
 }
