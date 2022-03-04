@@ -1,21 +1,23 @@
 .navigationButtons{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
     height: 100%;
-    background-color: #77528c;
+    margin-bottom: 10px;
 }
 
 .navButton{
     display: flex;
+    background-color: #8845B5;
     color: white;
     justify-content: center;
 	text-transform: uppercase;
 	font-weight: bold;
 	cursor: pointer;
-    width: 100%;
-    height: 100%;
+    width: 115px;
+    height: 51px;
+    border-radius: 26px;
     text-align: center;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -27,4 +29,10 @@
 
 .navButton > div{
     margin: auto;
+}
+
+.navButton.back{
+    background-color: #fff;
+    color: #8845B5;
+    border: 2px solid #8845B5;
 }

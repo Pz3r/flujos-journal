@@ -4,7 +4,7 @@ import './style.css'
 const NavigationButtons = ({OnNext, ShowSubmit, OnBack, OnSubmit})=>{
     return(
         <div className="navigationButtons">
-            <div className='navButton' onClick={OnBack}>
+            <div className='navButton back' onClick={OnBack}>
                 <div>
                     Back
                 </div>
