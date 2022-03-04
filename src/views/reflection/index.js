@@ -39,7 +39,8 @@ let ExampleJournal = [
     { 
         prompt: "Upload photos of your ride:", 
         formType: "imageUpload", 
-        options: []
+        options: [],
+        optional: true
     }
 
 ]
@@ -85,9 +86,7 @@ const Reflection = ()=>{
 		<div className="container">
 			<div className="reflection">
                 <PlacementIndicator Total={ExampleJournal.length} Current={position}/>
-                <div className='body'>
-                    <Form Form={ExampleJournal[position]} Answer={journalInputs[position]} SaveAnswers={_saveAnswers}/>
-                </div>
+                <Form Form={ExampleJournal[position]} Answer={journalInputs[position]} SaveAnswers={_saveAnswers}/>
                 <div className='action'>
                     <NavigationButtons OnNext={GoNext} OnBack={GoBack} ShowSubmit={ShowSubmit} OnSubmit={_submitAnswers}/>
                 </div>
