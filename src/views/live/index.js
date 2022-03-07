@@ -44,7 +44,8 @@ const Live = ()=>{
 	}, [selectedColor])
 
 	const userInput = (input)=>{
-		SubmitData({type: "live", data:input, user: 'test', time: Date.now()}).then((response)=>{})
+		SubmitData(
+			{ type: "live", data:input, user: 'test', time: Date.now()}).then((response)=>{})
 	}
 
 

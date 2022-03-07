@@ -12,14 +12,20 @@ const ImageUpload = ({Options, Answer, OnUpdate})=>{
         if (event.target.files && event.target.files[0]) {
             let img = event.target.files[0];
             setImage( URL.createObjectURL(img) );
+            OnUpdate(img)
           }
+    }
+
+    const _clearImage = ()=>{
+        setImage(null)
+        OnUpdate(null)
     }
 
     return(
         <div className="imageUploadForm">
             <img src={image?image:tempImage}/>
             <div className="buttonGroup">
-                <button className="btn" disabled={!image}>Cancel</button>
+                <button className="btn" disabled={!image} onClick={_clearImage}>Cancel</button>
 
                 <label class="btn">
                     Upload

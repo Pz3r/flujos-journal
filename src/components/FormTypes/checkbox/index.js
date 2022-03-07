@@ -23,7 +23,7 @@ const Checkbox = ({Options, Answer, OnUpdate})=>{
         <div className="checkbox">
             {Options.map((e, i) =>(
                 <div className="option">
-                    <label class="form-control">
+                    <label className="form-control">
                     <input type={"checkbox"} checked={Answer.includes(i)} onClick={()=>{_handleUpdate(i)}}/>
                     </label>
                     <div className="checkLabel">{e}</div>

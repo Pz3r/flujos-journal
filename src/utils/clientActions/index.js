@@ -9,7 +9,7 @@ export const SubmitData = (Data)=>{
         method: "POST",
         headers:{
             'Content-Type': 'application/json',
-            'X-Api-Key': JOURNAL_API_KEY
+            'x-api-key': JOURNAL_API_KEY
         },
         body: JSON.stringify(Data)
     }) 
@@ -18,8 +18,9 @@ export const SubmitData = (Data)=>{
 export const PutImage = (Name, Data)=>{
     return fetch(PHOTO_ENDPOINT+Name, {
         method: "PUT",
+        mode: "no-cors",
         headers:{
-            "x-api-Key": PHOTO_API_KEY
+            "x-api-key": PHOTO_API_KEY
         },
         body: Data
     })

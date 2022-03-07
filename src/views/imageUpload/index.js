@@ -11,7 +11,7 @@ import './style.css'
 let blankForm = { 
     prompt: "Upload photos of your ride:", 
     formType: "imageUpload", 
-    options: ["1", "2", "3", "4", "5"],
+    options: [],
     optional: true
 }
 

@@ -4,7 +4,7 @@ import './styles.css'
 import PlacementIndicator from '../../components/PlacementIndicator';
 import Form from '../../components/_form';
 import NavigationButtons from '../../components/NavigationButtons';
-import { SubmitData } from '../../utils/clientActions';
+import { PutImage, SubmitData } from '../../utils/clientActions';
 
 
 /*
@@ -45,10 +45,12 @@ let ExampleJournal = [
 
 ]
 
+const USER = "test"
+
 const Reflection = ()=>{
     let navigate = useNavigate();
     const [position, setPosition] = useState(0)
-    const [journalInputs, setJournalInputs] = useState(new Array(ExampleJournal.length).fill(null))
+    const [journalInputs, setJournalInputs] = useState( new Array(ExampleJournal.length).fill(null) )
     const [loading, setLoading] = useState(false)
 
 
@@ -62,7 +64,19 @@ const Reflection = ()=>{
 
     const _submitAnswers = async()=>{
         setLoading(true)
-        SubmitData({type: "reflection", data:journalInputs, user: 'test'}).then((response)=>{
+        var operations = []
+        var image = journalInputs.pop()
+        var imageName = null
+        if(image){
+            var extension = image.name.split('.').pop()
+            var ts = Date.now()
+            imageName = USER+ts+"."+extension   
+            console.log({name: imageName, data: image})
+            operations.push( PutImage(imageName, image) )       
+        }
+        console.log({type: "reflection", data: journalInputs, user: USER})
+        operations.push( SubmitData({type: "reflection", answers: journalInputs, journal:ExampleJournal, image:imageName, userId: 'test', role: 'testRole'}) )
+        Promise.allSettled(operations).then(()=>{
             setLoading(false)
             navigate('/thankyou')
         })
