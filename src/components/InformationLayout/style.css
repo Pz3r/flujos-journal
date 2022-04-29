@@ -1,0 +1,21 @@
+.InformationLayoutContainer{
+	padding: 24px;
+}
+
+.InformationLayout{
+	height: 100%;
+	width: 90%;
+	border: 2.5px solid #00B74F;
+	border-radius: 0 100px;
+	margin: auto;
+	margin-top: 20px;
+	padding: 27px;
+}
+
+.InformationLayout p{
+	font-family: 'Open Sans';
+	font-style: italic;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 19px;
+}

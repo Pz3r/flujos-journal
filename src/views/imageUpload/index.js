@@ -1,19 +1,12 @@
-import react from "react";
 import { useNavigate } from "react-router-dom";
 
-import Form from "../../components/_form";
+import Form from "../../components/Form";
+import Header from "../../components/Header";
 
 import NavigationButtons from "../../components/NavigationButtons";
 
 
 import './style.css'
-
-let blankForm = { 
-    prompt: "Upload photos of your ride:", 
-    formType: "imageUpload", 
-    options: [],
-    optional: true
-}
 
 const ImageUpload = () => {
     let navigate  = useNavigate()
@@ -23,21 +16,16 @@ const ImageUpload = () => {
     }
 
     const _submitAnswers = ()=>{
-
+        navigate(-1)
     }
 
 
     return (
-        <div className="container">
             <div className="imageUpload">
-                <div className="body">
-                    <Form Form={blankForm}></Form>
-                </div>
-                <div className="action">
-                    <NavigationButtons OnBack={GoBack} ShowSubmit={true} OnSubmit={_submitAnswers}/>
-                </div>
+                <Header Invert HasBack/>
+                <Form Prompt={"Upload photos of your ride:"} FormType={"photo"}></Form>
+                <NavigationButtons OnBack={GoBack} ShowSubmit={true} OnSubmit={_submitAnswers}/>
             </div>
-        </div>
     )
 }
 

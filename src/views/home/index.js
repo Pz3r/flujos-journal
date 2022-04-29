@@ -1,55 +1,34 @@
-import React, {useState} from 'react'
-import { useLocation } from 'react-router';
-import classNames from 'classnames'
-import ReactJson from 'react-json-view'
+import React, {useContext} from 'react'
+import { useNavigate } from 'react-router-dom';
 import './styles.css'
-import { Link } from 'react-router-dom';
+import Header from '../../components/Header';
+import PageMenu from '../../components/PageMenu';
 
 
-function useQuery() {
-	const { search } = useLocation();
-  
-	return new URLSearchParams(search), [search];
-  }
+import book from '../../assets/icons/book-open.svg'
+import radio from '../../assets/icons/radio.svg'
+import upload from '../../assets/icons/upload.svg'
+import grid from '../../assets/icons/grid.svg'
+import { DataContext } from '../../app/dataContext';
+
+
+const NavigationMenuItems = [
+	{label: "Ride Journaling", 	logo:book, color: "#00B74F", path: "/reflection"},
+	{label: "Live Mode", 		logo:radio, color: "#5289C7", path: "/live"},
+	{label: "Photo Upload", 	logo:upload, color: "#882E72", path: "/upload"},
+	{label: "Artwork Details", 	logo:grid, color: "#777777", path: "/about"},
+]
 
 
 const Home = ()=>{
-	const [selectingMode, setSelectingMode] = useState(false)
-
-	var search = window.location.search.substring(1);
-	var params = {}
-	try{
-		params = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}')
-	} catch (e){
-		console.log('no params')
-	}
-
-	const onSelectMode = ()=>{
-		setSelectingMode(true)
-	}
+	const {HasUserID} = useContext(DataContext)
+	const navigate = useNavigate()
 
 
 	return (
-		<div className="container">
-			<div className="landing">
-				<div className={classNames("header", {"selectingMode": selectingMode})}>
-					<div className="corridor_name">
-						Corridor
-					</div>
-					<div className="title">
-						Journaling
-					</div>
-				</div>
-				<div className={classNames("modeSelection")}>
-
-					<Link className='btn' to="/reflection">Reflection</Link>
-					<Link className='btn' to="/live">Live</Link>
-					<Link className='btn' to="/upload">Upload a Photo</Link>
-				</div>
-				<div className={classNames("map", {"in": selectingMode})}>
-
-				</div>
-			</div>
+		<div className="landing">
+				<Header MainPage={true} HasInfo={false} HasLangauge={false}/>
+				<PageMenu MenuItems={NavigationMenuItems} GoNav={HasUserID?(path)=>navigate(path): ()=>{window.alert('Cannot perform action with userId')}}></PageMenu>
 		</div>
 	)	
 }

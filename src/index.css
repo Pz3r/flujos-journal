@@ -1,5 +1,39 @@
 @import-normalize;
 
+@font-face {
+  font-family: "Maax Rounded";
+  src: url('./assets/fonts/Maax\ Rounded.otf');
+}
+
+@font-face {
+  font-family: "Maax Rounded Bold";
+  src: url('./assets/fonts/Maax\ Rounded\ Bold.otf');
+}
+
+@font-face {
+  font-family: "Maax Rounded Bold Italic";
+  src: url('./assets/fonts/Maax\ Rounded\ BoldItalic.otf');
+}
+
+@font-face {
+  font-family: "Maax Rounded Italic";
+  src: url('./assets/fonts/Maax\ Rounded\ Italic.otf');
+}
+
+@font-face {
+  font-family: "Maax Rounded Medium";
+  src: url('./assets/fonts/Maax\ Rounded\ Medium.otf');
+}
+
+@font-face {
+  font-family: "Maax Rounded Medium Italic";
+  src: url('./assets/fonts/Maax\ Rounded\ MediumItalic.otf');
+}
+
+
+
+
+
 * {
   box-sizing: border-box;
 }
@@ -34,6 +68,7 @@ code {
 
 
 .container{
+  position: relative;
   width: 480px;
   height: 854px;
   margin: auto;
@@ -44,9 +79,57 @@ code {
   display: none;
 }
 
+
+.referenceWarning{
+  position: absolute;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top: -110px;
+  width: 90%;
+  margin: 0% 5%;
+  height: 100px;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+              0 2px 2px rgba(0,0,0,0.12), 
+              0 4px 4px rgba(0,0,0,0.12), 
+              0 8px 8px rgba(0,0,0,0.12),
+              0 16px 16px rgba(0,0,0,0.12);
+  z-index: 10;
+}
+
+.referenceWarning.Active{
+  animation: 1s ease-out 0s 1 slideInFromTop;
+  margin: 5% 5%;
+  top: 10px;
+}
+
+.referenceWarning h1{
+  text-align: center;
+  margin: 0;
+}
+
+.referenceWarning h2{
+  text-align: center;
+  margin: 0;
+}
+
+
 @media only screen and (max-width: 768px)  {
   .container{
     width: 100%;
     height: 100%;
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-200%);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

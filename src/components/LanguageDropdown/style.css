@@ -1,0 +1,46 @@
+.language_selector{
+	width: fit-content;
+	position: relative;
+	margin-left: auto;
+	z-index: 10;
+}
+
+.language_selector > button{
+	border: 0;
+	background-color: rgba(0, 0, 0, 0);
+	background-image: url('../../assets/icons/globe.svg');
+	background-size: 100%;
+	width: 30px;
+	height: 30px
+}
+
+.language_selector.inverted > button{
+	background-image: url('../../assets/icons/globe_invert.svg');
+}
+
+.language_selector .dropdown{
+	display: flex;
+	flex-direction: column;
+	width: 150px;
+	height: 160px;
+	background-color: #333333;
+	padding: 20px;
+	border-radius: 40px 0px;
+	position: absolute;
+	top: 36px;
+	right: 0px;
+}
+
+.language_selector .dropdown button{
+	width: 100%;
+	flex: 1;
+	background-color: rgba(0, 0, 0, 0);
+	border: 0;
+	color: white;
+	font-family: 'Maax Rounded';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 18px;
+}
+

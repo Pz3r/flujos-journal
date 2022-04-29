@@ -9,7 +9,7 @@ const PlacementIndicator = ({Total, Current})=>{
     return(
         <div className="placementIndicator">
             {Dots.map((e,i)=>(
-                <div className={ classNames("navDot", {"active": Current==i}) } ></div>
+                <div key={i} className={ classNames("navDot", {"active": Current===i}) } ></div>
             ))}
         </div>
     )
