@@ -1,14 +1,16 @@
 
 import './style.css'
 
-const NavigationButtons = ({OnNext, ShowSubmit, OnBack, OnSubmit})=>{
+const NavigationButtons = ({OnNext, ShowBack, ShowSubmit, OnBack, OnSubmit})=>{
     return(
         <div className="navigationButtons">
-            <div className='navButton back' onClick={OnBack}>
-                <div>
-                    Back
-                </div>
-            </div>
+            {ShowBack?(
+                            <div className='navButton back' onClick={OnBack}>
+                            <div>
+                                {'< Back'}
+                            </div>
+                        </div>
+            ):(null)}
             {ShowSubmit?(
             <div className='navButton' onClick={OnSubmit}>
                 <div>
@@ -18,7 +20,7 @@ const NavigationButtons = ({OnNext, ShowSubmit, OnBack, OnSubmit})=>{
             ):(
             <div className='navButton' onClick={OnNext}>
                 <div>
-                    Next
+                    {'Next >'}
                 </div>
             </div>
             )}

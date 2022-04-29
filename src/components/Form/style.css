@@ -1,0 +1,275 @@
+.FormContainer{
+	position: relative;
+	width: 90%;
+	height: 100%;
+	margin: auto;
+	margin-top: 20px;
+}
+.Form{
+	position: absolute;
+	top:0;
+	left: auto;
+	right: auto;
+	width: 100%;
+	background-color: white;
+	margin: auto;
+	border-radius: 0 75px;
+}
+
+.Form.F1{
+	top:0;
+	bottom: 20px;
+	left: auto;
+	right: auto;
+	width: 100%;
+	background-color: white;
+	border-radius: 0 75px;
+}
+.Form.F2{
+	top:0;
+	bottom: 10px;
+	left: 10px;
+	width: 90%;
+	background-color: #B9B9B9;
+	border-radius: 0 75px;
+}
+.Form.F3{
+	top:0;
+	bottom:0px;
+	left: 20px;
+	width: 80%;
+	background-color: #A3A4A4;
+	border-radius: 0 75px;
+}
+
+.Form .prompt{
+	width: 80%;
+	margin: 27px;
+	margin-top: 30px;
+	font-family: 'Maax Rounded';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 22px;
+}
+
+.Form .optional{
+	color:#939598;
+	font-family: 'Maax Rounded';
+	width: 100%;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.Satisfaction{
+	width: fit-content;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	height: 70%;
+}
+
+.Satisfaction .Option{
+	flex: 1 1;
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	align-items: center;
+	width: 100%;
+	gap: 10px;
+	border-radius: 40px;
+	border: 4px solid transparent;
+	padding: 0px 20px;
+	max-height: 80px;
+}
+
+.Satisfaction .Option.Selected{
+	border: 4px solid #00B84F;
+}
+
+.Satisfaction .Labels{
+	text-transform: uppercase;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 33px;
+}
+
+.MultipleSelect{
+	height: 70%;
+	max-height: 450px;
+	width: 80%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows:repeat(auto-fit);
+}
+
+.MultipleSelect .Option{
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	width: fit-content;
+	gap: 10px;
+}
+
+.MultipleSelect .Option .Labels{
+	font-family: 'Open Sans';
+	font-weight: bold;
+}
+
+.FreeEntry .EntryContainer{
+	width: 85%;
+	margin: auto;
+}
+
+.FreeEntry textarea{
+	font-family: "Open Sans";
+	width: 100%;
+	height: 150px;
+	padding: 12px 20px;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	background-color: #f8f8f8;
+	font-size: 16px;
+	resize: none;
+}
+
+
+.ColorEntry .ColorWheelContainer{
+	margin: auto;
+	width: 75%;
+}
+
+.ColorEntry .Hint{
+	width: fit-content;
+	margin: auto;
+	margin-top: 30px;
+	color: rgba(0,0,0,0.3);
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 25px;
+}
+
+.ImageContainer{
+	width: 85%;
+	height: fit-content;
+	max-height:400px;
+	margin: auto;
+}
+
+
+.ImageContainer > img{
+	width: 100%;
+	min-height: 50%;
+	max-height: 75%;
+	object-fit: cover;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 15px;
+}
+
+
+.PhotoUpload .btn{
+	border-radius: 20px;
+	width: 80px;
+	background-color: #00B84F;
+	color: white;
+	height: 30px;
+	text-transform: uppercase;
+	border: none;
+	font-size: 10pt;
+	margin: 0;
+	text-align: center;
+	line-height: 30px;
+}
+
+.PhotoUpload .btn.secondary{
+	background-color: #939598;
+}
+
+
+.PhotoUpload  .btn:disabled{
+	background-color: #939598;
+}
+    
+.PhotoUpload input[type="file"] {
+	display: none;
+    }
+    
+.PhotoUpload .buttonGroup{
+	display: flex;
+	gap: 10px;
+	flex-direction: row;
+	margin: auto;
+	margin-top: 5px;
+	justify-content: flex-end;
+	width: 85%;
+    }
+
+
+/* The switch - the box around the slider */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 36px;
+	height: 20px;
+      }
+      
+      /* Hide default HTML checkbox */
+      .switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+      }
+      
+      /* The slider */
+      .slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+      }
+      
+      .slider:before {
+	position: absolute;
+	content: "";
+	height: 18px;
+	width: 18px;
+	left: 1px;
+	bottom: 1px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+      }
+      
+      input:checked + .slider {
+	background-color: #2196F3;
+      }
+      
+      input:focus + .slider {
+	box-shadow: 0 0 1px #2196F3;
+      }
+      
+      input:checked + .slider:before {
+	-webkit-transform: translateX(17px);
+	-ms-transform: translateX(17px);
+	transform: translateX(17px);
+      }
+      
+      /* Rounded sliders */
+      .slider.round {
+	border-radius: 34px;
+      }
+      
+      .slider.round:before {
+	border-radius: 50%;
+      }

@@ -1,0 +1,120 @@
+.Header{
+	position: relative;
+}
+.Header .Hero{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	width: 72%;
+	margin: auto;
+	align-items: center;
+	margin-top: 30px;
+}
+
+.Header .Logo{
+	width: 43%;
+}
+
+.Header h1{
+	font-family: 'Maax Rounded';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 48px;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 0 0;
+}
+
+.Header h2{
+	font-family: 'Maax Rounded';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 0 0;
+}
+
+.Header .QuickActions{
+	position: absolute;
+	top: 16px;
+	height: 80px;
+	width: 100%;
+}
+
+.QuickActions .RightSide{
+	position: absolute;
+	right: 17px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.QuickActions .LeftSide{
+	position: absolute;
+	left: 17px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.HeaderTitle{
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.HeaderTitle h2{
+	font-family: 'Maax Rounded Bold';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 41px;
+	text-align: center;
+	margin: 0 0;
+}
+
+.HeaderTitle h1{
+	font-family: 'Maax Rounded';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 25px;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 0 0;
+	margin-top: 16px;
+	color: #939598;
+}
+
+.BackButton{
+	background-image: url('../../assets/icons/arrow-left.svg');
+	border: 0;
+	background-color: rgba(0, 0, 0, 0);
+	background-size: 100%;
+	width: 30px;
+	height: 30px
+}
+
+.CameraButton{
+	background-image: url('../../assets/icons/camera.svg');
+	border: 0;
+	background-color: rgba(0, 0, 0, 0);
+	background-size: 100%;
+	width: 30px;
+	height: 30px
+}
+
+.InfoButton{
+	background-image: url('../../assets/icons/help-circle.svg');
+	border: 0;
+	background-color: rgba(0, 0, 0, 0);
+	background-size: 100%;
+	width: 30px;
+	height: 30px
+}
+
+.Inverted .BackButton{
+	background-image: url('../../assets/icons/arrow-left_invert.svg');
+}

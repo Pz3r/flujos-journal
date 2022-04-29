@@ -1,0 +1,14 @@
+footer{
+	width: 100%;
+	height: 90px;
+	margin-top: 22px;
+}
+
+footer .FooterLogo{
+	width: 50%;
+	margin: auto;
+}
+
+.FooterLogo img{
+	width: 100%;
+}

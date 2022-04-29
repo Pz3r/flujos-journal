@@ -1,60 +1,104 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { useNavigate } from 'react-router-dom';
 import './styles.css'
-import PlacementIndicator from '../../components/PlacementIndicator';
-import Form from '../../components/_form';
+import Form from '../../components/Form';
 import NavigationButtons from '../../components/NavigationButtons';
 import { PutImage, SubmitData } from '../../utils/clientActions';
+import Header from '../../components/Header';
 
 
-/*
-function useQuery() {
-	const { search } = useLocation();
-  
-	return new URLSearchParams(search), [search];
-  }
-*/
+import terrible from '../../assets/Bad.svg'
+import bad from '../../assets/Meh.svg'
+import okay from '../../assets/Okay.svg'
+import good from '../../assets/Good.svg'
+import great from '../../assets/Great.svg'
+import { DataContext } from '../../app/dataContext';
 
-let ExampleJournal = [
+
+
+function shuffleArray(arr) {
+	arr.sort(() => Math.random() - 0.5);
+	return arr
+      }
+
+let Journal = [
     { 
         prompt: "Rate your commute satisfaction:", 
-        formType: "faceChoice", 
-        options: ["1", "2", "3", "4", "5"]
+        formType: "satifaction", 
+        options: [
+            {
+                label: "terrible",
+                face: terrible
+            }, 
+            {
+                label: "bad",
+                face: bad
+            }, 
+            {
+                label: "okay",
+                face: okay
+            }, 
+            {
+                label: "good",
+                face: good
+            }, 
+            {
+                label: "great",
+                face: great
+            }, 
+        ]
     },
     { 
-        prompt: "Select the words that describe your commute:", 
-        formType: "wordSelect", 
-        options: ["scary", "energizing", "intense", "liberating", "playful", "stressful", "tedious", "worrying", "tiring", "autonomy"]
+        prompt: "Select all the characteristics of your ride:", 
+        formType: "multpleSelect", 
+        options: shuffleArray([
+            "Healthy", 
+            "Safe",
+            "Playful",
+            "Relaxing",
+            "Liberating",
+            "Easy",
+            "Slow",
+            "Hazardous",
+            "Tiring",
+            "Stressful",
+            "Rushed",
+            "Unsafe"
+        ])
     },
     { 
-        prompt: "I felt...", 
-        formType: "checkbox", 
-        options: ["disconnected", "left behind", "on pace", "recognized", "celebrated"]
+        prompt: "Describe your ride with one word or short phrase:", 
+        formType: "freeEntry", 
+        options: "My ride was..."
     },
     { 
-        prompt: "How safe was your ride?", 
-        formType: "colorWheel", 
-        options: []
+        prompt: "What color best expresses how you feel about your last CiBiC ride?", 
+        formType: "colorEntry", 
+        options: [
+            "blue",
+            "yellow",
+            "magenta",
+            "light blue",
+            "green",
+            "pink"
+        ]
     },
     { 
         prompt: "Upload photos of your ride:", 
-        formType: "imageUpload", 
-        options: [],
+        formType: "photo", 
         optional: true
     }
-
 ]
 
-const USER = "test"
-
 const Reflection = ()=>{
+    const {QueryInfo} = useContext(DataContext)
     let navigate = useNavigate();
     const [position, setPosition] = useState(0)
-    const [journalInputs, setJournalInputs] = useState( new Array(ExampleJournal.length).fill(null) )
+    const [journalInputs, setJournalInputs] = useState( new Array(Journal.length).fill(null) )
     const [loading, setLoading] = useState(false)
 
-
     const _saveAnswers = (answer)=>{
+        console.log(answer)
         setJournalInputs((prev)=>{
             let temp = [...prev]
             temp[position] = answer
@@ -70,12 +114,10 @@ const Reflection = ()=>{
         if(image){
             var extension = image.name.split('.').pop()
             var ts = Date.now()
-            imageName = USER+ts+"."+extension   
-            console.log({name: imageName, data: image})
+            imageName = QueryInfo.id+"/"+ts+"."+extension   
             operations.push( PutImage(imageName, image) )       
         }
-        console.log({type: "reflection", data: journalInputs, user: USER})
-        operations.push( SubmitData({type: "reflection", answers: journalInputs, journal:ExampleJournal, image:imageName, userId: 'test', role: 'testRole'}) )
+        operations.push( SubmitData( {type: "reflection", answers: journalInputs, journal:Journal, image:imageName, userId: QueryInfo.id, role: 'testRole'}) )
         Promise.allSettled(operations).then(()=>{
             setLoading(false)
             navigate('/thankyou')
@@ -95,18 +137,22 @@ const Reflection = ()=>{
     }
 
 
-    let ShowSubmit = position === ExampleJournal.length-1
+    let ShowSubmit = position === Journal.length-1
 	return (
-		<div className="container">
 			<div className="reflection">
-                <PlacementIndicator Total={ExampleJournal.length} Current={position}/>
-                <Form Form={ExampleJournal[position]} Answer={journalInputs[position]} SaveAnswers={_saveAnswers}/>
-                <div className='action'>
-                    <NavigationButtons OnNext={GoNext} OnBack={GoBack} ShowSubmit={ShowSubmit} OnSubmit={_submitAnswers}/>
-                </div>
+                <Header ShowProgressIndicator ProgressTotal={Journal.length} ProgressIndex={position} Invert HasBack/>
+                    <Form 
+                        Prompt={Journal[position].prompt} 
+                        FormType={Journal[position].formType} 
+                        Answer={journalInputs[position]} 
+                        OnAnswer={_saveAnswers} 
+                        Optional={Journal[position].optional} 
+                        Options={Journal[position].options}
+                    />
+                <NavigationButtons OnNext={GoNext} ShowBack={position>0} OnBack={GoBack} ShowSubmit={ShowSubmit} OnSubmit={_submitAnswers}/>
 			</div>
-		</div>
 	)	
 }
+
 
 export default Reflection
