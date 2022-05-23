@@ -114,10 +114,11 @@ const Reflection = ()=>{
         if(image){
             var extension = image.name.split('.').pop()
             var ts = Date.now()
-            imageName = QueryInfo.id+"/"+ts+"."+extension   
+            imageName = QueryInfo.username+"/"+ts+"."+extension   
             operations.push( PutImage(imageName, image) )       
         }
-        operations.push( SubmitData( {type: "reflection", answers: journalInputs, journal:Journal, image:imageName, userId: QueryInfo.id, role: 'testRole'}) )
+        operations.push( SubmitData( {type: "reflection", answers: journalInputs, journal:Journal, image:imageName, userId: QueryInfo.username, paveData:QueryInfo, role: QueryInfo.role}) )
+        navigate('/thankyou')
         Promise.allSettled(operations).then(()=>{
             setLoading(false)
             navigate('/thankyou')
@@ -149,7 +150,7 @@ const Reflection = ()=>{
                         Optional={Journal[position].optional} 
                         Options={Journal[position].options}
                     />
-                <NavigationButtons OnNext={GoNext} ShowBack={position>0} OnBack={GoBack} ShowSubmit={ShowSubmit} OnSubmit={_submitAnswers}/>
+                <NavigationButtons OnNext={GoNext} ShowBack={position>0} OnBack={GoBack} ShowSubmit={ShowSubmit} OnSubmit={loading?()=>{}:_submitAnswers}/>
 			</div>
 	)	
 }

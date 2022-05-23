@@ -36,7 +36,7 @@ const Live = ()=>{
 
 	const userInput = (input)=>{
 		let time = new Date().toISOString().replace('Z','+00:00')
-		SubmitData({ type: "live", data:input, userId: QueryInfo.id, time: time, role:'testRole'}).then((response)=>{})
+		SubmitData({ type: "live", data:input, userId: QueryInfo.username, paveData:QueryInfo, time: time, role:QueryInfo.role}).then((response)=>{})
 	}
 
 

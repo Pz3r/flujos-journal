@@ -4,26 +4,30 @@ import { useLocation } from "react-router-dom";
 export const DataContext = React.createContext();
 
 const Data =  ({children}) => {
-	const [QueryInfo, setQueryInfo] = useState({id: 'unknown', role: 'unknown'})
+	const [QueryInfo, setQueryInfo] = useState({})
 	var search = window.location.search.substring(1);
 	
 	useEffect(()=>{
 		try{
-			setQueryInfo(JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}'))
+			setQueryInfo((e)=>{
+				var fromQS = new URLSearchParams(search)
+				return Object.assign(Object.fromEntries(fromQS.entries()), e)
+			})
 		} catch (e){
 			
 		}
 	}, [])
 
-	const HasUserID = QueryInfo.id !=='unknown'
+	const HasUserID = QueryInfo.username
 
 	const defaultContext = {QueryInfo, HasUserID}
 
 	return (
 		<DataContext.Provider value={defaultContext}>
-			<div className={classNames("referenceWarning", {"Active": QueryInfo.id=='unknown'})}>
+			<div className={classNames("referenceWarning", {"Active": !HasUserID})}>
 				<h1>Warning!</h1>
-				<h2>No User Id Found.</h2>
+				<h2>No Username Found.</h2>
+				<p style={{ width: "100%", inlineSize: "90%", overflowWrap: "break-word"}}>params: {search}</p>
 			</div>
 			{children}
 		</DataContext.Provider>

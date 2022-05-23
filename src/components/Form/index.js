@@ -56,7 +56,7 @@ const FreeEntry = (Answers, onAnswer, Options)=>{
 	return(
 	<div className='FreeEntry'>
 		<div className='EntryContainer'>
-			<textarea rows={5} cols={35} placeholder={Options} onChange={(e)=>_updateAnswer(e)} value={Answers==null?"":Answers}></textarea>
+			<textarea type="textarea" autoFocus rows={5} cols={35} placeholder={Options} onChange={(e)=>_updateAnswer(e)} value={Answers==null?"":Answers}/>
 		</div>
 	</div>
 	)
@@ -74,32 +74,34 @@ const ColorEntry = (Answers, onAnswer, Options)=>{
 }
 
 const Photo = (Answer, onAnswer, Options)=>{
-	const [image, setImage] = useState(Answer)
+	let photo = tempImage
+	if(Answer != null){
+		photo = URL.createObjectURL(Answer) 
+	}
 
 	const _handleUpdate = (event)=>{
 	    if (event.target.files && event.target.files[0]) {
 		let img = event.target.files[0];
-		setImage( URL.createObjectURL(img) );
-		onAnswer(img)
+		onAnswer( img )
 	      }
 	}
     
 	const _clearImage = ()=>{
-	    setImage(null)
-	    onAnswer(null)
+	    onAnswer(null, null)
 	}
+	console.log(Answer)
 	return(
 	<div className='PhotoUpload'>
 		<div className='ImageContainer'>
-			<img alt="Uploaded" src={image?image:tempImage}/>
+			<img alt="Uploaded" src={photo}/>
 		</div>
 
         	<div className="buttonGroup">
-        	    <button className="btn secondary" disabled={!image} onClick={_clearImage}>Cancel</button>
+        	    <button className="btn secondary" disabled={!Answer} onClick={_clearImage}>Cancel</button>
 	
         	    <label className="btn">
         	        Upload
-        	        <input type="file" name="image" accept="image/*" onChange={_handleUpdate} />
+        	        <input type="file" name="image" accept="image/*;capture=camera" onChange={_handleUpdate} />
         	    </label>
 	
         	</div>

@@ -16,7 +16,6 @@ const NavigationMenuItems = [
 	{label: "Ride Journaling", 	logo:book, color: "#00B74F", path: "/reflection"},
 	{label: "Live Mode", 		logo:radio, color: "#5289C7", path: "/live"},
 	{label: "Photo Upload", 	logo:upload, color: "#882E72", path: "/upload"},
-	{label: "Artwork Details", 	logo:grid, color: "#777777", path: "/about"},
 ]
 
 
@@ -28,7 +27,7 @@ const Home = ()=>{
 	return (
 		<div className="landing">
 				<Header MainPage={true} HasInfo={false} HasLangauge={false}/>
-				<PageMenu MenuItems={NavigationMenuItems} GoNav={HasUserID?(path)=>navigate(path): ()=>{window.alert('Cannot perform action with userId')}}></PageMenu>
+				<PageMenu MenuItems={NavigationMenuItems} GoNav={HasUserID?(path)=>navigate(path): ()=>{window.alert('Cannot perform action without username')}}></PageMenu>
 		</div>
 	)	
 }
