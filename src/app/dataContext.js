@@ -4,19 +4,9 @@ import { useLocation } from "react-router-dom";
 export const DataContext = React.createContext();
 
 const Data =  ({children}) => {
-	const [QueryInfo, setQueryInfo] = useState({})
 	var search = window.location.search.substring(1);
-	
-	useEffect(()=>{
-		try{
-			setQueryInfo((e)=>{
-				var fromQS = new URLSearchParams(search)
-				return Object.assign(Object.fromEntries(fromQS.entries()), e)
-			})
-		} catch (e){
-			
-		}
-	}, [])
+	var fromQS = new URLSearchParams(search)
+	const [QueryInfo, setQueryInfo] = useState({role:fromQS.get('role'), username: fromQS.get('username'), name: fromQS.get('name'), qs: search})
 
 	const HasUserID = QueryInfo.username
 

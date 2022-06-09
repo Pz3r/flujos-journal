@@ -117,6 +117,7 @@ const Reflection = ()=>{
             imageName = QueryInfo.username+"/"+ts+"."+extension   
             operations.push( PutImage(imageName, image) )       
         }
+        
         operations.push( SubmitData( {type: "reflection", answers: journalInputs, journal:Journal, image:imageName, userId: QueryInfo.username, paveData:QueryInfo, role: QueryInfo.role}) )
         navigate('/thankyou')
         Promise.allSettled(operations).then(()=>{
