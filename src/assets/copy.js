@@ -1,8 +1,8 @@
-LandingPage = {
+export const LandingPageCopy = {
 	Title:{
 		"en": "FLOWS",
-		"es": "Flows",
-		"zh": "",
+		"es": "FLOWS",
+		"zh": "FLOWS",
 	},
 	Location:{
 		"en": "Los Angeles",
@@ -31,7 +31,7 @@ LandingPage = {
 	}
 }
 
-AboutPage = {
+export const AboutPage = {
 	Title:{
 		"en": "FLOWS",
 		"es": "Flows",
@@ -85,7 +85,7 @@ AboutPage = {
 }
 
 
-Satisfaction = {
+export const Satisfaction = {
 	Prompt:{
 		"en": "Rate your commute satisfaction:",
 		"es": "Evalúa tu satisfacción en el traslado",
@@ -120,7 +120,7 @@ Satisfaction = {
 	]
 }
 
-RideCharacteristics = {
+export const RideCharacteristics = {
 	Prompt:{
 		"en": "Select all the characteristics of your ride:",
 		"es": "Selecciona las características de tu ride",
@@ -190,7 +190,7 @@ RideCharacteristics = {
 	]
 }
 
-ShortResponse = {
+export const ShortResponse = {
 	Prompt:{
 		"en": "Describe your ride with one word or short phrase:",
 		"es": "Describe tu viaje en una palabra o frase corta",
@@ -203,7 +203,7 @@ ShortResponse = {
 	}
 }
 
-Color = {
+export const Color = {
 	Prompt:{
 		"en": "What color best expresses how you feel about your last CiBiC ride?",
 		"es": "¿Qué color expresa cómo te sientes con tu último viaje con CiBiC?",
@@ -216,7 +216,7 @@ Color = {
 	}
 }
 
-Photos = {
+export const Photos = {
 	Prompt:{
 		"en": "Upload photos of your ride:",
 		"es": "Sube fotos de tu viaje",
@@ -239,7 +239,7 @@ Photos = {
 	}
 }
 
-ThankYou = {
+export const ThankYou = {
 	header:{
 		"en": "Thank you!",
 		"es": "Gracias!",
@@ -257,7 +257,7 @@ ThankYou = {
 	}
 }
 
-Live = {
+export const Live = {
 	header:{
 		"en": "Live",
 		"es": "En Vivo",
@@ -280,7 +280,7 @@ Live = {
 	}
 }
 
-QRCode = {
+export const QRCode = {
 	header:{
 		"en": "Your QR Code",
 		"es": "Tu QR code",

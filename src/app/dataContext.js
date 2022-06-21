@@ -10,7 +10,9 @@ const Data =  ({children}) => {
 
 	const HasUserID = QueryInfo.username
 
-	const defaultContext = {QueryInfo, HasUserID}
+	const UserLang = navigator.language.split("-")[0]
+
+	const defaultContext = {QueryInfo, HasUserID, UserLang}
 
 	return (
 		<DataContext.Provider value={defaultContext}>

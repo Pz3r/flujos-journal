@@ -1,22 +1,27 @@
 import LanguageDropdown from "../LanguageDropdown"
 import classNames from "classnames"
+import {useContext} from 'react'
 
 import {useNavigate} from 'react-router-dom'
 import './style.css'
 
 import cibicLogo from '../../assets/icons/cibic_logo.png'
 import PlacementIndicator from "../PlacementIndicator"
+import { LandingPageCopy } from "../../assets/copy"
+
+import { DataContext } from "../../app/dataContext"
 
 
 const Header = ({HasBack, HasCamera, PageName, MainPage, Invert, ShowProgressIndicator, ProgressIndex, ProgressTotal, HasInfo, HasLangauge, ShowTitle=true, BackGoesTo=-1})=>{
+	const {UserLang} = useContext(DataContext)
 	let navigate = useNavigate()
 	return(
 		<div className={classNames("Header", {"Inverted": Invert})}>
 			{MainPage?(
 			<div className="Hero">
 				<img alt="Cibic Logo" className="Logo" src={cibicLogo}/>
-				<h1>Flows</h1>
-				<h2>Los Angeles</h2>
+				<h1>{LandingPageCopy.Title[UserLang]}</h1>
+				<h2>{LandingPageCopy.Location[UserLang]}</h2>
 			</div>
 			):(
 			ShowProgressIndicator?(
@@ -25,7 +30,7 @@ const Header = ({HasBack, HasCamera, PageName, MainPage, Invert, ShowProgressInd
 				</div>
 			):(
 				ShowTitle?(<div className="HeaderTitle" >
-					<h1>Flows</h1>
+					<h1>{LandingPageCopy.Title[UserLang]}</h1>
 					<h2>{PageName}</h2>
 				</div>):(<div style={{height: '50px'}}></div>)
 

@@ -11,17 +11,18 @@ import upload from '../../assets/icons/upload.svg'
 import grid from '../../assets/icons/grid.svg'
 import { DataContext } from '../../app/dataContext';
 
-
-const NavigationMenuItems = [
-	{label: "Ride Journaling", 	logo:book, color: "#00B74F", path: "/reflection"},
-	{label: "Live Mode", 		logo:radio, color: "#5289C7", path: "/live"},
-	{label: "Photo Upload", 	logo:upload, color: "#882E72", path: "/upload"},
-]
+import {LandingPageCopy} from '../../assets/copy'
 
 
 const Home = ()=>{
-	const {HasUserID} = useContext(DataContext)
+	const {HasUserID, UserLang} = useContext(DataContext)
 	const navigate = useNavigate()
+
+	const NavigationMenuItems = [
+		{label: LandingPageCopy.JournalingMenuHeading[UserLang], 	logo:book, color: "#00B74F", path: "/reflection"},
+		{label: LandingPageCopy.LiveModeMenuHeading[UserLang], 		logo:radio, color: "#5289C7", path: "/live"},
+		{label: LandingPageCopy.PhotoUploadMenuHeading[UserLang], 	logo:upload, color: "#882E72", path: "/upload"},
+	]
 
 
 	return (
