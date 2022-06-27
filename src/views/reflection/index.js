@@ -5,6 +5,7 @@ import Form from '../../components/Form';
 import NavigationButtons from '../../components/NavigationButtons';
 import { PutImage, SubmitData } from '../../utils/clientActions';
 import Header from '../../components/Header';
+import {Satisfaction, RideCharacteristics, ShortResponse, Color, Photos} from '../../assets/copy'
 
 
 import terrible from '../../assets/Bad.svg'
@@ -23,56 +24,43 @@ function shuffleArray(arr) {
 
 let Journal = [
     { 
-        prompt: "Rate your commute satisfaction:", 
+        prompt: Satisfaction.Prompt, 
         formType: "satifaction", 
         options: [
             {
-                label: "terrible",
+                label: Satisfaction.Options[0],
                 face: terrible
             }, 
             {
-                label: "bad",
+                label: Satisfaction.Options[1],
                 face: bad
             }, 
             {
-                label: "okay",
+                label: Satisfaction.Options[2],
                 face: okay
             }, 
             {
-                label: "good",
+                label: Satisfaction.Options[3],
                 face: good
             }, 
             {
-                label: "great",
+                label: Satisfaction.Options[4],
                 face: great
             }, 
         ]
     },
     { 
-        prompt: "Select all the characteristics of your ride:", 
+        prompt: RideCharacteristics.Prompt, 
         formType: "multpleSelect", 
-        options: shuffleArray([
-            "Healthy", 
-            "Safe",
-            "Playful",
-            "Relaxing",
-            "Liberating",
-            "Easy",
-            "Slow",
-            "Hazardous",
-            "Tiring",
-            "Stressful",
-            "Rushed",
-            "Unsafe"
-        ])
+        options: shuffleArray(RideCharacteristics.Options)
     },
     { 
-        prompt: "Describe your ride with one word or short phrase:", 
+        prompt: ShortResponse.Prompt, 
         formType: "freeEntry", 
-        options: "My ride was..."
+        options: ShortResponse.Placeholder
     },
     { 
-        prompt: "What color best expresses how you feel about your last CiBiC ride?", 
+        prompt: Color.Prompt, 
         formType: "colorEntry", 
         options: [
             "blue",
@@ -84,14 +72,14 @@ let Journal = [
         ]
     },
     { 
-        prompt: "Upload photos of your ride:", 
+        prompt: Photos.Prompt, 
         formType: "photo", 
         optional: true
     }
 ]
 
 const Reflection = ()=>{
-    const {QueryInfo} = useContext(DataContext)
+    const {QueryInfo, UserLang} = useContext(DataContext)
     let navigate = useNavigate();
     const [position, setPosition] = useState(0)
     const [journalInputs, setJournalInputs] = useState( new Array(Journal.length).fill(null) )
@@ -151,7 +139,7 @@ const Reflection = ()=>{
                         Optional={Journal[position].optional} 
                         Options={Journal[position].options}
                     />
-                <NavigationButtons OnNext={GoNext} ShowBack={position>0} OnBack={GoBack} ShowSubmit={ShowSubmit} OnSubmit={loading?()=>{}:_submitAnswers}/>
+                <NavigationButtons NextString="Next" BackString="Back" SubmitString="Submit"  OnNext={GoNext} ShowBack={position>0} OnBack={GoBack} ShowSubmit={ShowSubmit} OnSubmit={loading?()=>{}:_submitAnswers}/>
 			</div>
 	)	
 }
