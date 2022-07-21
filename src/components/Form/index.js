@@ -84,6 +84,7 @@ const Photo = (Answer, onAnswer, Options, lang)=>{
 	const _handleUpdate = (event)=>{
 	    if (event.target.files && event.target.files[0]) {
 		let img = event.target.files[0];
+		console.log(img)
 		onAnswer( img )
 	      }
 	}

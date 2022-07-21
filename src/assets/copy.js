@@ -53,12 +53,12 @@ export const AboutPage = {
 		"zh": "CiBiC 是由加州大學洛杉磯分校指導，國家科學基金會資助等，一項合作研究的專案。 CiBiC 研究如何扶助支援洛杉磯的自行車通勤。",
 	},
 	p3:{
-		"en": "To learn more about getting involved with CiBiC please visit our website!",
-		"es": "Para conocer más acerca de cómo participar en CiBiC ¡visita nuestro Website!",
-		"zh": "若您想瞭解更多有關參與 CiBiC 的資訊，請造訪我們的網站！",
+		"en": "To learn more about getting involved with CiBiC please <a href='https://cibic.bike/'>visit our website!</a>",
+		"es": "Para conocer más acerca de cómo participar en CiBiC <a href='https://cibic.bike/'>¡visita nuestro Website!</a>",
+		"zh": "若您想瞭解更多有關參與 CiBiC 的資訊，<a href='https://cibic.bike/'>請造訪我們的網站！</a>",
 	},
 	LocationHeading:{
-		"en": "Key Location",
+		"en": "Key Locations",
 		"es": "Locación principal",
 		"zh": "主要位置",
 	},
@@ -239,7 +239,7 @@ export const Photos = {
 	}
 }
 
-export const ThankYou = {
+export const ThankYouPage = {
 	header:{
 		"en": "Thank you!",
 		"es": "Gracias!",

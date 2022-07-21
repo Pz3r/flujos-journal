@@ -8,11 +8,13 @@ const Data =  ({children}) => {
 	var fromQS = new URLSearchParams(search)
 	const [QueryInfo, setQueryInfo] = useState({role:fromQS.get('role'), username: fromQS.get('username'), name: fromQS.get('name'), qs: search})
 
+	const [UserLang, SetUserLang] = useState(fromQS.get('lang') || "en")
+
+
 	const HasUserID = QueryInfo.username
 
-	const UserLang = navigator.language.split("-")[0]
 
-	const defaultContext = {QueryInfo, HasUserID, UserLang}
+	const defaultContext = {QueryInfo, HasUserID, UserLang, SetUserLang}
 
 	return (
 		<DataContext.Provider value={defaultContext}>
