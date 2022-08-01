@@ -7,8 +7,15 @@ const Data =  ({children}) => {
 	var search = window.location.search.substring(1);
 	var fromQS = new URLSearchParams(search)
 	const [QueryInfo, setQueryInfo] = useState({role:fromQS.get('role'), username: fromQS.get('username'), name: fromQS.get('name'), qs: search})
-
-	const [UserLang, SetUserLang] = useState(fromQS.get('lang') || "en")
+	var lang = "en"
+	var tempLang = fromQS.get('lang')
+	if (tempLang){
+		lang = tempLang.split('-')[0]
+	}
+	if (!['en', 'es', 'zh'].includes(lang)){
+		lang = 'en'
+	}
+	const [UserLang, SetUserLang] = useState(lang)
 
 
 	const HasUserID = QueryInfo.username
