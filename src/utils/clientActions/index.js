@@ -24,8 +24,6 @@ const toBase64 = file => new Promise((resolve, reject) => {
 
 export const PutImage = (Name, Data)=>{
     return toBase64(Data).then((data)=>{
-        console.log(data)
-        console.log(data.length)
         return fetch(PHOTO_ENDPOINT, {
             method: "POST",
             headers:{

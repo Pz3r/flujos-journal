@@ -9,10 +9,11 @@ import { SubmitData } from '../../utils/clientActions';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { DataContext } from '../../app/dataContext';
+import { LivePage } from '../../assets/copy';
 
 
 const Live = ()=>{
-	const {QueryInfo} = useContext(DataContext)
+	const {QueryInfo, UserLang} = useContext(DataContext)
 	const [selectedColor, setSelectedColor] = useState(null)
 
 	useEffect(()=>{
@@ -42,7 +43,7 @@ const Live = ()=>{
 
 	return (
 			<div className="live">
-				<Header PageName="LIVE" HasBack HasCamera/>
+				<Header PageName={LivePage.header[UserLang]} HasBack HasCamera/>
 				<div className='ColorWheelContainer'>
 					<ColorWheel OnSelect={(e)=>{selectColor(e)}} Selected={selectedColor}/>
 				</div>
@@ -53,7 +54,7 @@ const Live = ()=>{
 								<FontAwesomeIcon icon={faExclamation} color='white' size='4x'/>
 							</div>
 						</div>
-						<p>Caution</p>
+						<p>{LivePage.caution[UserLang]}</p>
 					</div>
 					<div>
 						<div className='live_button' onClick={ (e)=>{ selectButton("community") } }>
@@ -61,7 +62,7 @@ const Live = ()=>{
 								<FontAwesomeIcon icon={faUsers} color='white' size='4x'/>
 							</div>
 						</div>
-						<p>Community</p>
+						<p>{LivePage.community[UserLang]}</p>
 					</div>
 					<div>
 						<div className='live_button' onClick={ (e)=>{ selectButton("positivity") } }>
@@ -69,7 +70,7 @@ const Live = ()=>{
 								<FontAwesomeIcon icon={faThumbsUp} color='white' size='4x'/>
 							</div>
 						</div>
-						<p>Positivity</p>
+						<p>{LivePage.positivity[UserLang]}</p>
 					</div>
 				</div>
 				<Footer/>

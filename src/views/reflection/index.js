@@ -79,7 +79,7 @@ let Journal = [
 ]
 
 const Reflection = ()=>{
-    const {QueryInfo, UserLang} = useContext(DataContext)
+    const {QueryInfo, UserLang, SetUploading} = useContext(DataContext)
     let navigate = useNavigate();
     const [position, setPosition] = useState(0)
     const [journalInputs, setJournalInputs] = useState( new Array(Journal.length).fill(null) )
@@ -95,22 +95,25 @@ const Reflection = ()=>{
     }
 
     const _submitAnswers = async()=>{
-        setLoading(true)
+        SetUploading(true)
         var operations = []
-        var image = journalInputs.pop()
-        var imageName = null
-        if(image){
-            var extension = image.name.split('.').pop()
+        var images = journalInputs.pop()
+        var imagesName = []
+        if(images){
             var ts = Date.now()
-            imageName = QueryInfo.username+"/"+ts+"."+extension   
-            operations.push( PutImage(imageName, image) )       
+            for(const [index, image] of images.entries()){
+                var extension = image.name.split('.').pop()
+                let imageName = QueryInfo.username+"/"+ts+"."+index+"."+extension
+                imagesName.push(imageName)
+                operations.push(PutImage(imageName, image))
+            }      
         }
         
-        operations.push( SubmitData( {type: "reflection", answers: journalInputs, journal:Journal, image:imageName, userId: QueryInfo.username, paveData:QueryInfo, role: QueryInfo.role}) )
-        navigate('/thankyou')
-        Promise.allSettled(operations).then(()=>{
-            setLoading(false)
-            navigate('/thankyou')
+        operations.push( SubmitData( {type: "reflection", answers: journalInputs, journal:Journal, images:imagesName, userId: QueryInfo.username, paveData:QueryInfo, role: QueryInfo.role}) )
+        Promise.allSettled(operations).then((response)=>{
+            console.log('upload complete', response )
+            SetUploading(false)
+            navigate('/thankyou'+window.location.search)
         })
     }
 

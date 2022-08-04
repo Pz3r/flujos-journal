@@ -118,6 +118,23 @@ code {
   margin: 0;
 }
 
+.uploadSheild{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(77, 77, 77, 0.75);
+  z-index: 9;
+  color: white;
+  display: none;
+}
+
+.uploadSheild.Active{
+  display:flex;
+}
+
 
 @media only screen and (max-width: 768px)  {
   .container{

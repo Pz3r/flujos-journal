@@ -28,7 +28,7 @@ const Home = ()=>{
 	return (
 		<div className="landing">
 				<Header MainPage={true} HasInfo={true} HasLangauge={true} />
-				<PageMenu MenuItems={NavigationMenuItems} GoNav={HasUserID?(path)=>navigate(path): ()=>{window.alert('Cannot perform action without username')}}></PageMenu>
+				<PageMenu MenuItems={NavigationMenuItems} GoNav={HasUserID?(path)=>navigate(path+window.location.search): ()=>{window.alert('Cannot perform action without username')}}></PageMenu>
 		</div>
 	)	
 }

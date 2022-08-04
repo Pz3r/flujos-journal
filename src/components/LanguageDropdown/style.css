@@ -2,7 +2,7 @@
 	width: fit-content;
 	position: relative;
 	margin-left: auto;
-	z-index: 10;
+	z-index: 5;
 }
 
 .language_selector > button{

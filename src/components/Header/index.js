@@ -40,10 +40,10 @@ const Header = ({HasBack, HasCamera, PageName, MainPage, Invert, ShowProgressInd
 				<div className="RightSide">
 					{HasLangauge?(<LanguageDropdown Inverted={Invert}/>):(null)}
 					{HasCamera?(
-						<button className="CameraButton" onClick={()=>(navigate('/upload'))}></button>
+						<button className="CameraButton" onClick={()=>(navigate('/upload'+window.location.search))}></button>
 					):(null)}
 					{HasInfo?(
-						<button className="InfoButton" onClick={()=>(navigate('/about'))}></button>
+						<button className="InfoButton" onClick={()=>(navigate('/about'+window.location.search))}></button>
 					):(null)}
 
 				</div>

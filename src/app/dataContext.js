@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import React,{ useEffect, useState } from "react"
 import { useLocation } from "react-router-dom";
+import { MoonLoader } from "react-spinners";
 export const DataContext = React.createContext();
 
 const Data =  ({children}) => {
@@ -16,12 +17,13 @@ const Data =  ({children}) => {
 		lang = 'en'
 	}
 	const [UserLang, SetUserLang] = useState(lang)
+	const [Uploading, SetUploading] = useState(false)
 
 
 	const HasUserID = QueryInfo.username
 
 
-	const defaultContext = {QueryInfo, HasUserID, UserLang, SetUserLang}
+	const defaultContext = {QueryInfo, HasUserID, UserLang, SetUserLang, SetUploading}
 
 	return (
 		<DataContext.Provider value={defaultContext}>
@@ -29,6 +31,10 @@ const Data =  ({children}) => {
 				<h1>Warning!</h1>
 				<h2>No Username Found.</h2>
 				<p style={{ width: "100%", inlineSize: "90%", overflowWrap: "break-word"}}>params: {search}</p>
+			</div>
+			<div className={classNames("uploadSheild", {"Active": Uploading})}> 
+				<h1>Uploading</h1>
+				<MoonLoader color="#ffffff" size={100}/>
 			</div>
 			{children}
 		</DataContext.Provider>

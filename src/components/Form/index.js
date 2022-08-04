@@ -76,15 +76,20 @@ const ColorEntry = (Answers, onAnswer, Options, lang)=>{
 }
 
 const Photo = (Answer, onAnswer, Options, lang)=>{
-	let photo = tempImage
+	let photos = [tempImage, tempImage, tempImage, tempImage]
 	if(Answer != null){
-		photo = URL.createObjectURL(Answer) 
+		let answerLinks = Answer.map(e=>(URL.createObjectURL(e) ))
+
+		photos = answerLinks.concat(photos).slice(0,4)
+	}
+
+	const _clearInputValue = (event)=>{
+		event.target.value = null
 	}
 
 	const _handleUpdate = (event)=>{
 	    if (event.target.files && event.target.files[0]) {
-		let img = event.target.files[0];
-		console.log(img)
+		let img = Array.from(event.target.files).slice(0,4);
 		onAnswer( img )
 	      }
 	}
@@ -92,19 +97,20 @@ const Photo = (Answer, onAnswer, Options, lang)=>{
 	const _clearImage = ()=>{
 	    onAnswer(null, null)
 	}
-	console.log(Answer)
 	return(
 	<div className='PhotoUpload'>
 		<div className='ImageContainer'>
-			<img alt="Uploaded" src={photo}/>
+			{photos.map(e=>(
+				<img alt="Uploaded" src={e} width={75}/>
+			))}
 		</div>
 
         	<div className="buttonGroup">
-        	    <button className="btn secondary" disabled={!Answer} onClick={_clearImage}>{Photos.cancel[lang]}</button>
+        	    <button className="btn secondary" onClick={_clearImage}>{Photos.cancel[lang]}</button>
 	
         	    <label className="btn">
         	        {Photos.upload[lang]}
-        	        <input type="file" name="image" accept="image/*;capture=camera" onChange={_handleUpdate} />
+        	        <input type="file" multiple name="image" accept="image/*" onChange={_handleUpdate} onClick={_clearInputValue} />
         	    </label>
 	
         	</div>

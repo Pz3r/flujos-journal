@@ -257,7 +257,7 @@ export const ThankYouPage = {
 	}
 }
 
-export const Live = {
+export const LivePage = {
 	header:{
 		"en": "Live",
 		"es": "En Vivo",
@@ -298,3 +298,11 @@ export const QRCode = {
 	}
 }
 
+
+export const Common = {
+	submit:{
+		"en": "Submit",
+		"es": "Siguiente",
+		"zh": "送出",
+	}
+}
