@@ -109,7 +109,7 @@ const Reflection = ()=>{
             }      
         }
         
-        operations.push( SubmitData( {type: "reflection", answers: journalInputs, journal:Journal, images:imagesName, userId: QueryInfo.username, paveData:QueryInfo, role: QueryInfo.role}) )
+        operations.push( SubmitData( {type: "reflection", onlyImages: false, answers: journalInputs, journal:Journal, images:imagesName, userId: QueryInfo.username, paveData:QueryInfo, role: QueryInfo.role}) )
         Promise.allSettled(operations).then((response)=>{
             console.log('upload complete', response )
             SetUploading(false)
