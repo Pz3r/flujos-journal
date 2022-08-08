@@ -40,7 +40,7 @@ const ImageUpload = () => {
                 imagesName.push(imageName)
                 operations.push(PutImage(imageName, image))
             }  
-            operations.push( SubmitData( {type: "reflection", onlyImages: false,  images:imagesName, userId: QueryInfo.username, paveData:QueryInfo, role: QueryInfo.role}) )
+            operations.push( SubmitData( {type: "reflection", onlyImages: true,  images:imagesName, userId: QueryInfo.username, paveData:QueryInfo, role: QueryInfo.role}) )
             Promise.allSettled(operations).then(response=>{
                 SetUploading(false)
                 console.log('upload complete', response )
