@@ -1,5 +1,5 @@
 import {useContext, useState, useEffect} from 'react'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { DataContext } from "../../app/dataContext";
 
 import Form from "../../components/Form";
@@ -12,10 +12,12 @@ import { Common } from '../../assets/copy';
 
 import './style.css'
 
-const ImageUpload = () => {
+const ImageUpload = (props) => {
     let navigate  = useNavigate()
+    const location = useLocation();
     const {QueryInfo, UserLang, SetUploading} = useContext(DataContext)
     const [images, setImages] = useState(null)
+    const FromLive = location.state.from == "/live"
 
 
     const GoBack = ()=>{
@@ -40,7 +42,11 @@ const ImageUpload = () => {
                 imagesName.push(imageName)
                 operations.push(PutImage(imageName, image))
             }  
-            operations.push( SubmitData( {type: "reflection", onlyImages: true,  images:imagesName, userId: QueryInfo.username, paveData:QueryInfo, role: QueryInfo.role}) )
+            var journalType = "reflection"
+            if (FromLive){
+                journalType = "live"
+            }
+            operations.push( SubmitData( {type: journalType, onlyImages: true,  images:imagesName, userId: QueryInfo.username, paveData:QueryInfo, role: QueryInfo.role}) )
             Promise.allSettled(operations).then(response=>{
                 SetUploading(false)
                 console.log('upload complete', response )

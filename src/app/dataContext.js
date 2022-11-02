@@ -5,6 +5,7 @@ import { MoonLoader } from "react-spinners";
 export const DataContext = React.createContext();
 
 const Data =  ({children}) => {
+	const location = useLocation();
 	var search = window.location.search.substring(1);
 	var fromQS = new URLSearchParams(search)
 	const [QueryInfo, setQueryInfo] = useState({role:fromQS.get('role'), username: fromQS.get('username'), name: fromQS.get('name'), qs: search})
@@ -24,10 +25,10 @@ const Data =  ({children}) => {
 
 
 	const defaultContext = {QueryInfo, HasUserID, UserLang, SetUserLang, SetUploading}
-
+	console.log(location.pathname != "/rwgps")
 	return (
 		<DataContext.Provider value={defaultContext}>
-			<div className={classNames("referenceWarning", {"Active": !HasUserID})}>
+			<div className={classNames("referenceWarning", {"Active": (!HasUserID && location.pathname != "/rwgps")})}>
 				<h1>Warning!</h1>
 				<h2>No Username Found.</h2>
 				<p style={{ width: "100%", inlineSize: "90%", overflowWrap: "break-word"}}>params: {search}</p>

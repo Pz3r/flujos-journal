@@ -5,9 +5,16 @@ export const LandingPageCopy = {
 		"zh": "FLOWS",
 	},
 	Location:{
-		"en": "Los Angeles",
-		"es": "Los Angeles",
-		"zh": "洛杉磯",
+		LA:{
+			"en": "Los Angeles",
+			"es": "Los Angeles",
+			"zh": "洛杉磯",
+		},
+		BA:{
+			"en": "BUENOS AIRES",
+			"es": "BUENOS AIRES",
+			"zh": "",
+		},
 	},
 	JournalingMenuHeading:{
 		"en": "Ride Journaling",

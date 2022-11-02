@@ -12,7 +12,7 @@ import { LandingPageCopy } from "../../assets/copy"
 import { DataContext } from "../../app/dataContext"
 
 
-const Header = ({HasBack, HasCamera, PageName, MainPage, Invert, ShowProgressIndicator, ProgressIndex, ProgressTotal, HasInfo, HasLangauge, ShowTitle=true, BackGoesTo=-1})=>{
+const Header = ({HasBack, HasCamera, PageName, Location, MainPage, Invert, ShowProgressIndicator, ProgressIndex, ProgressTotal, HasInfo, HasLangauge, ShowTitle=true, BackGoesTo=-1})=>{
 	const {UserLang} = useContext(DataContext)
 	let navigate = useNavigate()
 	return(
@@ -21,7 +21,7 @@ const Header = ({HasBack, HasCamera, PageName, MainPage, Invert, ShowProgressInd
 			<div className="Hero">
 				<img alt="Cibic Logo" className="Logo" src={cibicLogo}/>
 				<h1>{LandingPageCopy.Title[UserLang]}</h1>
-				<h2>{LandingPageCopy.Location[UserLang]}</h2>
+				<h2>{Location}</h2>
 			</div>
 			):(
 			ShowProgressIndicator?(
@@ -40,7 +40,7 @@ const Header = ({HasBack, HasCamera, PageName, MainPage, Invert, ShowProgressInd
 				<div className="RightSide">
 					{HasLangauge?(<LanguageDropdown Inverted={Invert}/>):(null)}
 					{HasCamera?(
-						<button className="CameraButton" onClick={()=>(navigate('/upload'+window.location.search))}></button>
+						<button className="CameraButton" onClick={()=>(navigate('/upload'+window.location.search, {state: {from: window.location.pathname}}))}></button>
 					):(null)}
 					{HasInfo?(
 						<button className="InfoButton" onClick={()=>(navigate('/about'+window.location.search))}></button>

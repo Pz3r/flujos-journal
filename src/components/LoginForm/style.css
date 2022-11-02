@@ -1,0 +1,99 @@
+.LoginForm{
+	background-color: #232339;
+	height: 100%;
+	min-height: 365px;
+	min-width: 360px;
+	width: 100%;
+	border-radius: 0px 50px 0px 0px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	align-content: space-around;
+	margin-top: 33px;
+}
+
+.LoginFieldsWrapper{
+	width: 87%;
+}
+
+.LoginFields{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	min-height: 260px;
+	max-height: 400px;
+	flex: 1;
+}
+
+.LoginFields input, label {
+	flex: 1;
+	display: block;
+}
+
+.LoginFields label{
+	color: white;
+	width: 100%;
+	font-size: 18px;
+}
+
+.LoginFields label:not(:first-child){
+	margin-top: 8px; /* must be responsive */
+}
+
+.LoginFields input[type=text], input[type=password]{
+	width: 100%;
+	height: 50px;
+	color: black;
+	border-radius: 6px;
+	border: 0px;
+	margin-top: 8px; /* must be responsive */
+	font-size: 16px;
+	padding-left: 16px;
+}
+
+.LoginFields button{
+	width: 72%;
+	height: 35px;
+	border-radius: 35px;
+	background-color: #00B84F;
+	text-transform: uppercase;
+	color: white;
+	border: 0;
+	margin-top: auto;
+}
+
+::placeholder{
+	color: #c4c4c4;
+}
+
+.AccountContact{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 15px;
+}
+
+.AccountContact a{
+	color: white;
+}
+
+.Legal{
+	width: 90%;
+}
+
+h2{
+	color: #BBBBBB;
+	margin: 0;
+	font-size: 14px;
+	margin-bottom: 6px;
+}
+
+p{
+	color: #FFFFFF;
+	margin: 0;
+	font-size: 10px;
+	line-height: 18px;
+}
+

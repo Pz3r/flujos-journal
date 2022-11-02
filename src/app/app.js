@@ -15,6 +15,7 @@ import Reflection from '../views/reflection';
 import ImageUpload from '../views/imageUpload';
 import ThankYou from '../views/thankyou';
 import About from '../views/about';
+import RWGPSLogin from '../views/rwgpsLogin'
 
 
 const App = ()=>{
@@ -30,6 +31,7 @@ const App = ()=>{
 						<Route path="/upload" element={<ImageUpload/>}/>
 						<Route path="/thankyou" element={<ThankYou/>}/>
 						<Route path="/about" element={<About/>}/>
+						<Route path="/rwgps" element={<RWGPSLogin/>}/>
 				</Routes>
 				</DataProvider>
 			</Router>

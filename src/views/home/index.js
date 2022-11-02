@@ -11,7 +11,7 @@ import upload from '../../assets/icons/upload.svg'
 import grid from '../../assets/icons/grid.svg'
 import { DataContext } from '../../app/dataContext';
 
-import {LandingPageCopy} from '../../assets/copy'
+import { LandingPageCopy } from '../../assets/copy'
 
 
 const Home = ()=>{
@@ -27,7 +27,7 @@ const Home = ()=>{
 
 	return (
 		<div className="landing">
-				<Header MainPage={true} HasInfo={true} HasLangauge={true} />
+				<Header MainPage={true} HasInfo={true} HasLangauge={true} Location={LandingPageCopy.Location.LA[UserLang]}/>
 				<PageMenu MenuItems={NavigationMenuItems} GoNav={HasUserID?(path)=>navigate(path+window.location.search): ()=>{window.alert('Cannot perform action without username')}}></PageMenu>
 		</div>
 	)	
