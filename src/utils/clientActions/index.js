@@ -1,6 +1,10 @@
 const JOURNAL_API_ENDPOINT = "https://73oajmp3pd.execute-api.us-west-1.amazonaws.com/prod"
 const JOURNAL_API_KEY = "xOsPBbAKQjAnfmQ11O2haoocwbwXZ7map1cEUcgf"
 
+const RIDE_WITH_GPS_ENDPOINT = "https://www.ridewithgps.com/current.json"
+const RIDE_WITH_GPS_API_KEY = "xOsPBbAKQjAnfmQ11O2haoocwbwXZ7map1cEUcgf"
+
+
 const PHOTO_ENDPOINT = "https://rme2z0gw62.execute-api.us-west-1.amazonaws.com/prod/"
 const PHOTO_API_KEY = "xOsPBbAKQjAnfmQ11O2haoocwbwXZ7map1cEUcgf"
 
@@ -31,5 +35,13 @@ export const PutImage = (Name, Data)=>{
             },
             body: JSON.stringify({ "name" : Name,  "file": data.split(',')[1] })
         })
+    })
+}
+
+export const LoginRWGPS = (Email, Password)=>{
+    //https://ridewithgps.com/api
+    login_creds = '?email='+encodeURIComponent(Email)+"&password="+encodeURIComponent(Password)+"&apikey="+RIDE_WITH_GPS_API_KEY+"&version=2"
+    return fetch(RIDE_WITH_GPS_ENDPOINT+login_creds).then((response)=>{
+        return response.json()
     })
 }
