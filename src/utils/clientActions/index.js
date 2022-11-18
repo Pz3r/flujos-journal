@@ -40,7 +40,7 @@ export const PutImage = (Name, Data)=>{
 
 export const LoginRWGPS = (Email, Password)=>{
     //https://ridewithgps.com/api
-    login_creds = '?email='+encodeURIComponent(Email)+"&password="+encodeURIComponent(Password)+"&apikey="+RIDE_WITH_GPS_API_KEY+"&version=2"
+    var login_creds = '?email='+encodeURIComponent(Email)+"&password="+encodeURIComponent(Password)+"&apikey="+RIDE_WITH_GPS_API_KEY+"&version=2"
     return fetch(RIDE_WITH_GPS_ENDPOINT+login_creds).then((response)=>{
         return response.json()
     })
