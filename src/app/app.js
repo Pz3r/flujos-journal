@@ -16,6 +16,7 @@ import ImageUpload from '../views/imageUpload';
 import ThankYou from '../views/thankyou';
 import About from '../views/about';
 import RWGPSLogin from '../views/rwgpsLogin'
+import QrCode from '../views/qrCode';
 
 
 const App = ()=>{
@@ -32,6 +33,7 @@ const App = ()=>{
 						<Route path="/thankyou" element={<ThankYou/>}/>
 						<Route path="/about" element={<About/>}/>
 						<Route path="/rwgps" element={<RWGPSLogin/>}/>
+						<Route path="/code" element={<QrCode/>}/>
 				</Routes>
 				</DataProvider>
 			</Router>
