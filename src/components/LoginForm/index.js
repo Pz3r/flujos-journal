@@ -1,20 +1,41 @@
+import React, {useState} from 'react';
+import { LoginRWGPS } from '../../utils/clientActions';
+
 import './style.css'
 
 const LoginForm = ({GoNav})=>{
+	const [inputField , setInputField] = useState({
+		email: '',
+		password: ''
+	    })
+
+	const inputsHandler = (e) =>{
+		setInputField( {...inputField, [e.target.name]: e.target.value} )
+	}
+
+
+	const FormSubmit = (e)=>{
+		LoginRWGPS(inputField.email, inputField.password).then(data=>{
+			console.log(data)
+		}).catch(error=>{
+			console.log(error)
+		})
+	}
+
 	return (
 		<div className="LoginForm">
 			<div className='LoginFieldsWrapper'>
-				<form className='LoginFields'>
+				<div className='LoginFields' onSubmit={FormSubmit}>
 					<label>
 						Email
-						<input type="text" placeholder='Email'></input>
+						<input autocomplete="false" type="text" placeholder='Email' onChange={inputsHandler} name="email" value={inputField.email}></input>
 					</label>
 					<label>
 						Password
-						<input type="password" placeholder='Password'></input>
+						<input autocomplete="false" type="password" placeholder='Password' onChange={inputsHandler} name="password" value={inputField.password}></input>
 					</label>
-					<button type='submit'>Login</button>
-				</form>
+					<button onClick={FormSubmit}>Login</button>
+				</div>
 			
 				<div className='AccountContact'>
 					<h2>Don't have an account?</h2>
