@@ -17,15 +17,26 @@ const Data =  ({children}) => {
 	if (!['en', 'es', 'zh'].includes(lang)){
 		lang = 'en'
 	}
+
+	var UserLocation = fromQS.get('loc')
+	if(UserLocation == null){
+		UserLocation = "LA"  
+	}
+
 	const [UserLang, SetUserLang] = useState(lang)
 	const [Uploading, SetUploading] = useState(false)
 
 
 	const HasUserID = QueryInfo.username
+	let prevLogin = localStorage.getItem("rwgps")
+	
+	if(prevLogin != null && !HasUserID){
+		let userData = JSON.parse(prevLogin)
+		window.location.href = '/?username='+ encodeURIComponent(userData.id) + "&name=" + encodeURIComponent(userData.name) + "&loc=BA"
+	}
 
 
-	const defaultContext = {QueryInfo, HasUserID, UserLang, SetUserLang, SetUploading}
-	console.log(location.pathname != "/rwgps")
+	const defaultContext = {QueryInfo, HasUserID, UserLang, UserLocation, SetUserLang, SetUploading}
 	return (
 		<DataContext.Provider value={defaultContext}>
 			<div className={classNames("referenceWarning", {"Active": (!HasUserID && location.pathname != "/rwgps")})}>

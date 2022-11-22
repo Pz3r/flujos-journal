@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import { LoginRWGPS } from '../../utils/clientActions';
 
 import './style.css'
 
 const LoginForm = ({GoNav})=>{
+	let navigate = useNavigate()
 	const [inputField , setInputField] = useState({
 		email: '',
 		password: ''
@@ -16,11 +18,20 @@ const LoginForm = ({GoNav})=>{
 
 	const FormSubmit = (e)=>{
 		LoginRWGPS(inputField.email, inputField.password).then(data=>{
-			console.log(data)
+			localStorage.setItem("rwgps", JSON.stringify(data.user))
+			window.location.href = '/?username='+ encodeURIComponent(data.user.id) + "&name=" + encodeURIComponent(data.user.name) + "&loc=BA"
+			//navigate('/?username='+ encodeURIComponent(data.user.id) + "&name=" + encodeURIComponent(data.user.name))
 		}).catch(error=>{
 			console.log(error)
 		})
 	}
+
+	let prevLogin = localStorage.getItem("rwgps")
+	if(prevLogin != null){
+		let userData = JSON.parse(prevLogin)
+		window.location.href = '/?username='+ encodeURIComponent(userData.id) + "&name=" + encodeURIComponent(userData.name) + "&loc=BA"
+	}
+
 
 	return (
 		<div className="LoginForm">

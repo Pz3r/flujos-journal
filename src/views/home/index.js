@@ -13,9 +13,8 @@ import { DataContext } from '../../app/dataContext';
 
 import { LandingPageCopy } from '../../assets/copy'
 
-
 const Home = ()=>{
-	const {HasUserID, UserLang} = useContext(DataContext)
+	const {HasUserID, UserLang, UserLocation} = useContext(DataContext)
 	const navigate = useNavigate()
 
 	const NavigationMenuItems = [
@@ -24,10 +23,11 @@ const Home = ()=>{
 		{label: LandingPageCopy.PhotoUploadMenuHeading[UserLang], 	logo:upload, color: "#882E72", path: "/upload"},
 	]
 
+	let location = LandingPageCopy.Location[UserLocation]
 
 	return (
 		<div className="landing">
-				<Header MainPage={true} HasInfo={true} HasLangauge={true} Location={LandingPageCopy.Location.LA[UserLang]}/>
+				<Header MainPage={true} HasInfo={true} HasLangauge={true} Location={location[UserLang]}/>
 				<PageMenu MenuItems={NavigationMenuItems} GoNav={HasUserID?(path)=>navigate(path+window.location.search): ()=>{window.alert('Cannot perform action without username')}}></PageMenu>
 		</div>
 	)	
