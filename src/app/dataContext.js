@@ -40,8 +40,8 @@ const Data =  ({children}) => {
 	return (
 		<DataContext.Provider value={defaultContext}>
 			<div className={classNames("referenceWarning", {"Active": (!HasUserID && location.pathname != "/rwgps")})}>
-				<h1>Warning!</h1>
-				<h2>No Username Found.</h2>
+				<h1>Error</h1>
+				<h2>Please report this error to the admin team.</h2>
 				<p style={{ width: "100%", inlineSize: "90%", overflowWrap: "break-word"}}>params: {search}</p>
 			</div>
 			<div className={classNames("uploadSheild", {"Active": Uploading})}> 
