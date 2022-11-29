@@ -46,7 +46,8 @@ const ImageUpload = (props) => {
             if (FromLive){
                 journalType = "live"
             }
-            operations.push( SubmitData( {type: journalType, onlyImages: true,  images:imagesName, userId: QueryInfo.username, paveData:QueryInfo, role: QueryInfo.role}) )
+            let time = new Date().toISOString().replace('Z','+00:00')
+            operations.push( SubmitData( {type: journalType, onlyImages: true,  images:imagesName, userId: QueryInfo.username, paveData:QueryInfo, time:time, role: QueryInfo.role}) )
             Promise.allSettled(operations).then(response=>{
                 SetUploading(false)
                 console.log('upload complete', response )
