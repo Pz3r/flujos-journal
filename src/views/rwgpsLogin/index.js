@@ -1,14 +1,6 @@
 import React, {useContext} from 'react'
-import { useNavigate } from 'react-router-dom';
 import './styles.css'
 import Header from '../../components/Header';
-import PageMenu from '../../components/PageMenu';
-
-
-import book from '../../assets/icons/book-open.svg'
-import radio from '../../assets/icons/radio.svg'
-import upload from '../../assets/icons/upload.svg'
-import grid from '../../assets/icons/grid.svg'
 import { DataContext } from '../../app/dataContext';
 
 import { LandingPageCopy } from '../../assets/copy'
@@ -16,8 +8,7 @@ import LoginForm from '../../components/LoginForm';
 
 
 const RWGPSLogin = ()=>{
-	const {HasUserID, UserLang} = useContext(DataContext)
-	const navigate = useNavigate()
+	const {UserLang} = useContext(DataContext)
 
 
 	return (

@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import { useNavigate } from 'react-router-dom';
 import { LoginRWGPS } from '../../utils/clientActions';
 
 import './style.css'
 
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 const LoginForm = ({GoNav})=>{
-	let navigate = useNavigate()
 	const [inputField , setInputField] = useState({
 		email: '',
 		password: ''

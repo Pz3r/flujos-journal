@@ -7,7 +7,7 @@ import './styles.css'
 import { DataContext } from '../../app/dataContext';
 
 const QrCode = ()=>{
-	const {UserLang, QueryInfo} = useContext(DataContext)
+	const {QueryInfo} = useContext(DataContext)
 	const ref = useRef(null)
 
 	useEffect(()=>{

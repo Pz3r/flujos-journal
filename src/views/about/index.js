@@ -23,7 +23,7 @@ const About = ()=>{
 					<h2>{AboutPage.LocationHeading[UserLang]}</h2>
 					<div style={{display: 'flex', flexDirection: "row", gap: "15px"}}>
 						<div style={{width:'30px'}}>
-							<img src={MapPin} width={30}/>
+							<img alt="map pin" src={MapPin} width={30}/>
 						</div>
 						<div>
 							<h3>{AboutPage.Location[UserLang]}</h3>

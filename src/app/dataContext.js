@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React,{ useEffect, useState } from "react"
+import React,{ useState } from "react"
 import { useLocation } from "react-router-dom";
 import { MoonLoader } from "react-spinners";
 export const DataContext = React.createContext();
@@ -8,7 +8,7 @@ const Data =  ({children}) => {
 	const location = useLocation();
 	var search = window.location.search.substring(1);
 	var fromQS = new URLSearchParams(search)
-	const [QueryInfo, setQueryInfo] = useState({role:fromQS.get('role'), username: fromQS.get('username'), name: fromQS.get('name'), qs: search})
+	const [QueryInfo] = useState({role:fromQS.get('role'), username: fromQS.get('username'), name: fromQS.get('name'), qs: search})
 	var lang = "en"
 	var tempLang = fromQS.get('lang')
 	if (tempLang){
@@ -39,7 +39,7 @@ const Data =  ({children}) => {
 	const defaultContext = {QueryInfo, HasUserID, UserLang, UserLocation, SetUserLang, SetUploading}
 	return (
 		<DataContext.Provider value={defaultContext}>
-			<div className={classNames("referenceWarning", {"Active": (!HasUserID && location.pathname != "/rwgps")})}>
+			<div className={classNames("referenceWarning", {"Active": (!HasUserID && location.pathname !== "/rwgps")})}>
 				<h1>Error</h1>
 				<h2>Please report this error to the admin team.</h2>
 				<p style={{ width: "100%", inlineSize: "90%", overflowWrap: "break-word"}}>params: {search}</p>
