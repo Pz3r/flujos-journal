@@ -1,6 +1,6 @@
 import './style.css'
 import classNames from 'classnames'
-import {useState, useContext} from 'react'
+import {useContext} from 'react'
 import ColorWheel from '../ColorWheel'
 import { DataContext } from '../../app/dataContext'
 

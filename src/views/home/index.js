@@ -8,7 +8,6 @@ import PageMenu from '../../components/PageMenu';
 import book from '../../assets/icons/book-open.svg'
 import radio from '../../assets/icons/radio.svg'
 import upload from '../../assets/icons/upload.svg'
-import grid from '../../assets/icons/grid.svg'
 import { DataContext } from '../../app/dataContext';
 
 import { LandingPageCopy } from '../../assets/copy'

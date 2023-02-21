@@ -1,4 +1,4 @@
-import {useContext, useState, useEffect} from 'react'
+import {useContext, useState} from 'react'
 import { useNavigate, useLocation } from "react-router-dom";
 import { DataContext } from "../../app/dataContext";
 
@@ -17,7 +17,7 @@ const ImageUpload = (props) => {
     const location = useLocation();
     const {QueryInfo, UserLang, SetUploading} = useContext(DataContext)
     const [images, setImages] = useState(null)
-    const FromLive = location.state.from == "/live"
+    const FromLive = location.state.from === "/live"
 
 
     const GoBack = ()=>{

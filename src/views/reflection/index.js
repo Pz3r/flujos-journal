@@ -79,14 +79,13 @@ let Journal = [
 ]
 
 const Reflection = ()=>{
-    const {QueryInfo, UserLang, SetUploading} = useContext(DataContext)
+    const {QueryInfo, SetUploading} = useContext(DataContext)
     let navigate = useNavigate();
     const [position, setPosition] = useState(0)
     const [journalInputs, setJournalInputs] = useState( new Array(Journal.length).fill(null) )
-    const [loading, setLoading] = useState(false)
+    const [loading] = useState(false)
 
     const _saveAnswers = (answer)=>{
-        console.log(answer)
         setJournalInputs((prev)=>{
             let temp = [...prev]
             temp[position] = answer

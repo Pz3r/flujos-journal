@@ -12,9 +12,9 @@ const LanguageDropdown = ({Inverted})=>{
 			<button onClick={()=>setOpen(!selectorOpen)}></button>
 			{selectorOpen? (
 			<div className="dropdown">
-				<button onClick={()=>SetUserLang('en')} className={classNames({Selected: UserLang=="en"})}>English</button>
-				<button onClick={()=>SetUserLang('es')} className={classNames({Selected: UserLang=="es"})}>Español</button>
-				<button onClick={()=>SetUserLang('zh')} className={classNames({Selected: UserLang=="zh"})}>简体中文</button>
+				<button onClick={()=>SetUserLang('en')} className={classNames({Selected: UserLang==="en"})}>English</button>
+				<button onClick={()=>SetUserLang('es')} className={classNames({Selected: UserLang==="es"})}>Español</button>
+				<button onClick={()=>SetUserLang('zh')} className={classNames({Selected: UserLang==="zh"})}>简体中文</button>
 			</div>
 			):(null)}
 		</div>

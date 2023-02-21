@@ -2,7 +2,6 @@ const JOURNAL_API_ENDPOINT = "https://73oajmp3pd.execute-api.us-west-1.amazonaws
 const JOURNAL_API_KEY = "xOsPBbAKQjAnfmQ11O2haoocwbwXZ7map1cEUcgf"
 
 const RIDE_WITH_GPS_ENDPOINT = "https://o227cwnhkmu6elvr3zbekhviby0zvvbu.lambda-url.us-east-1.on.aws"
-const RIDE_WITH_GPS_API_KEY = "xOsPBbAKQjAnfmQ11O2haoocwbwXZ7map1cEUcgf"
 
 
 const PHOTO_ENDPOINT = "https://rme2z0gw62.execute-api.us-west-1.amazonaws.com/prod/"
