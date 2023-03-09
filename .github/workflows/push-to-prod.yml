@@ -1,4 +1,4 @@
-name: Deploy dev branch to cibic-viz.sudo.codes
+name: Deploy dev branch to app.cibic.bike
 
 on:
   push:

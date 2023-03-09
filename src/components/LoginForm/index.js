@@ -22,7 +22,7 @@ const LoginForm = ({GoNav})=>{
 
 	const FormSubmit = (e)=>{
 		LoginRWGPS(inputField.email, inputField.password).then(data=>{
-			if(data.status == 401){
+			if(data.status === 401){
 				setBadLogin(true)
 				return
 			}
@@ -35,7 +35,7 @@ const LoginForm = ({GoNav})=>{
 	}
 
 	let prevLogin = localStorage.getItem("rwgps")
-	if(prevLogin != null){
+	if(prevLogin !== null){
 		let userData = JSON.parse(prevLogin)
 		window.location.href = '/?username='+ encodeURIComponent(userData.id) + "&name=" + encodeURIComponent(userData.name) + "&loc=BA"
 	}

@@ -6,7 +6,6 @@ import Footer from '../../components/Footer';
 
 import { DataContext } from '../../app/dataContext';
 
-import MapPin from '../../assets/map-pin.png'
 
 import {AboutPage} from '../../assets/copy'
 
