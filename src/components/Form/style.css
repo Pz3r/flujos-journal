@@ -178,10 +178,16 @@
 	border-radius: 15px;
 }
 
+.PhotoUpload .buttonGroup{
+	display: flex;
+	flex-direction: row;
+
+	margin-top: 10px;
+}
 
 .PhotoUpload .btn{
+	flex: 1;
 	border-radius: 20px;
-	width: 80px;
 	background-color: #00B84F;
 	color: white;
 	height: 30px;
@@ -191,6 +197,10 @@
 	margin: 0;
 	text-align: center;
 	line-height: 30px;
+}
+
+.PhotoUpload .SubmitButton{
+	flex: 1;
 }
 
 .PhotoUpload .btn.secondary{
@@ -211,7 +221,7 @@
 	gap: 10px;
 	flex-direction: row;
 	margin: auto;
-	margin-top: 5px;
+	margin-top: 20px;
 	justify-content: flex-end;
 	width: 85%;
     }

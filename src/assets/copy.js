@@ -16,6 +16,11 @@ export const LandingPageCopy = {
 			"zh": "",
 		},
 	},
+	InterpretiveCartographyHeading:{
+		"en": "Interpretive Cartography",
+		"es": "Cartografía Interpretativa",
+		"zh": "解释性制图",
+	},
 	JournalingMenuHeading:{
 		"en": "Ride Journaling",
 		"es": "Diario de viaje",
@@ -35,6 +40,23 @@ export const LandingPageCopy = {
 		"en": "Artwork Detail",
 		"es": "Obra de Arte",
 		"zh": "原圖詳細資訊",
+	},
+	Error:{
+		Heading: {
+			"en": "Error",
+			"es": "Error",
+			"zh": "错误",
+		},
+		Subheading1: {
+			"en": "Please access journaling via either the PAVE app",
+			"es": "Acceda al diario a través de la aplicación PAVE",
+			"zh": "请通过 PAVE 应用程序或 RWGPS",
+		},
+		Subheading2: {
+			"en": "or RWGPS: ",
+			"es": "o RWGPS: ",
+			"zh": "访问日记：",
+		}
 	}
 }
 
@@ -312,4 +334,49 @@ export const Common = {
 		"es": "Siguiente",
 		"zh": "送出",
 	}
+}
+
+
+export const Login = {
+	Email:{
+		"en": "Email",
+		"es": "Correo electrónico",
+		"zh": "電子郵件",
+	},
+	Password:{
+		"en": "Password",
+		"es": "Contraseña",
+		"zh": "密碼",
+	},
+	Login:{
+		"en": "Login",
+		"es": "Inicio de sesión",
+		"zh": "登入",
+	},
+	NoAccount:{
+		"en": "Don't have an account?",
+		"es": "¿No tiene una cuenta?",
+		"zh": "還沒申請您的帳號？",
+	},
+	ContactUs:{
+		"en": "contact us",
+		"es": "contáctenos",
+		"zh": "請聯繫我們",
+	},
+	Privacy:{
+		"en": "Privacy & Cookies",
+		"es": "Privacidad y cookies",
+		"zh": "隱私權與 Cookies",
+	},
+	Cookies:{
+		"en": "This site uses cookies to collect information for the CiBiC (CiBiC Bicycle Commuting) research project. These cookies are used to connect your submissions to the interpretive cartography.",
+		"es": "Este sitio utiliza las cookies para recabar información para el proyecto de investigación de CiBiC (CiBiC Bicycle Commuting). Estas cookies son utilizadas para vincular sus envíos con la cartografía interpretativa.",
+		"zh": "本網站透過 cookies 蒐集資訊，作為 CiBiC（自行車通勤）研究專案用途。利用這些 cookies 將您的應用內容連接至詮釋性地圖製作。",
+	},
+	Incorrect:{
+		"en": "Incorrect user or password. Please try again with your credentials from RWGPS. ",
+		"es": "Usuario o contraseña incorrectos. Vuelva a intentarlo con sus credenciales de RWGPS.",
+		"zh": "用户或密码不正确。请使用您来自 RWGPS 的凭据重试。",
+	}
+
 }

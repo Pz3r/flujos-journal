@@ -107,11 +107,13 @@ const Photo = (Answer, onAnswer, Options, lang)=>{
 
         	<div className="buttonGroup">
         	    <button className="btn secondary" onClick={_clearImage}>{Photos.cancel[lang]}</button>
-	
-        	    <label className="btn">
+		
+		<div className="btn">
+		<label className="btn">
         	        {Photos.upload[lang]}
         	        <input type="file" multiple name="image" accept="image/*" onChange={_handleUpdate} onClick={_clearInputValue} />
         	    </label>
+		</div>
 	
         	</div>
 	</div>

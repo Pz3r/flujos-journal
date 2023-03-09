@@ -15,22 +15,13 @@ const About = ()=>{
 
 	return (
 			<div className="about">
-				<Header PageName={AboutPage.Title[UserLang]} HasBack HasLangauge={true}/>
+				<Header PageName={AboutPage.Heading[UserLang]} HasBack HasLangauge={true}/>
 				<InformationLayout>
 					<p>{AboutPage.p1[UserLang]}</p>
+					<br/>
 					<p>{AboutPage.p2[UserLang]}</p>
-					<p dangerouslySetInnerHTML={{__html: AboutPage.p3[UserLang]}}></p>
-					<h2>{AboutPage.LocationHeading[UserLang]}</h2>
-					<div style={{display: 'flex', flexDirection: "row", gap: "15px"}}>
-						<div style={{width:'30px'}}>
-							<img alt="map pin" src={MapPin} width={30}/>
-						</div>
-						<div>
-							<h3>{AboutPage.Location[UserLang]}</h3>
-							<address>{AboutPage.Street[UserLang]}<br/>{AboutPage.City[UserLang]}</address>
-						</div>
-					</div>
-					<p>{AboutPage.Footer[UserLang]}</p>
+					<br/>
+					<p dangerouslySetInnerHTML={{__html: AboutPage.p3[UserLang]}}></p>					
 				</InformationLayout>
 				<Footer/>
 			</div>

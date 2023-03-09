@@ -8,6 +8,7 @@ import PageMenu from '../../components/PageMenu';
 import book from '../../assets/icons/book-open.svg'
 import radio from '../../assets/icons/radio.svg'
 import upload from '../../assets/icons/upload.svg'
+import grid from '../../assets/icons/grid.svg'
 import { DataContext } from '../../app/dataContext';
 
 import { LandingPageCopy } from '../../assets/copy'
@@ -20,6 +21,7 @@ const Home = ()=>{
 		{label: LandingPageCopy.JournalingMenuHeading[UserLang], 	logo:book, color: "#00B74F", path: "/reflection"},
 		{label: LandingPageCopy.LiveModeMenuHeading[UserLang], 		logo:radio, color: "#5289C7", path: "/live"},
 		{label: LandingPageCopy.PhotoUploadMenuHeading[UserLang], 	logo:upload, color: "#882E72", path: "/upload"},
+		{label: LandingPageCopy.InterpretiveCartographyHeading[UserLang], logo:grid, color: "#777", path: "http://cibic-viz.sudo.codes/", external:true}
 	]
 
 	let location = LandingPageCopy.Location[UserLocation]

@@ -132,7 +132,7 @@ const Reflection = ()=>{
     let ShowSubmit = position === Journal.length-1
 	return (
 			<div className="reflection">
-                <Header ShowProgressIndicator ProgressTotal={Journal.length} ProgressIndex={position} Invert HasBack/>
+                <Header ShowProgressIndicator ProgressTotal={Journal.length} ProgressIndex={position} Invert HasBack HasLangauge={true}/>
                     <Form 
                         Prompt={Journal[position].prompt} 
                         FormType={Journal[position].formType} 

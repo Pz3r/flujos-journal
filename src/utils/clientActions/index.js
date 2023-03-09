@@ -41,6 +41,6 @@ export const LoginRWGPS = (Email, Password)=>{
     //https://ridewithgps.com/api
     var login_creds = '?username='+encodeURIComponent(Email)+"&password="+encodeURIComponent(Password)
     return fetch(RIDE_WITH_GPS_ENDPOINT+login_creds).then((response)=>{
-        return response.json()
+        return response
     })
 }
