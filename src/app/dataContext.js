@@ -34,6 +34,7 @@ const Data =  ({children}) => {
 	if(prevLogin != null && !HasUserID){
 		let userData = JSON.parse(prevLogin)
 		window.location.href = '/?username='+ encodeURIComponent(userData.id) + "&name=" + encodeURIComponent(userData.name) + "&loc=BA"
+		UserLocation = "BA"
 	}
 
 

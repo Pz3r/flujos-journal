@@ -1,6 +1,5 @@
 import React, {useContext} from 'react'
 import Form from "../../components/Form";
-import image from '../../assets/system_image.png'
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
@@ -12,7 +11,7 @@ import './style.css'
 import { ThankYouPage } from "../../assets/copy";
 
 const ThankYou = () => {
-    const {UserLang} = useContext(DataContext)
+    const {UserLang, UserLocation} = useContext(DataContext)
 
 
     return (
@@ -21,7 +20,7 @@ const ThankYou = () => {
                 <Form Prompt={ThankYouPage.header}>
                     <h2>{ThankYouPage.information[UserLang]}</h2>
                     <div className="imageContainer">
-                        <img alt="snapshot of artwork" src={image}/>
+                        <img alt="snapshot of artwork" src={"https://d1a1668ubdx5yp.cloudfront.net/renderings/"+UserLocation+"-recent.jpg"}/>
                     </div>
                     <div className="caption">{ThankYouPage.caption[UserLang]}</div>
                 </Form>

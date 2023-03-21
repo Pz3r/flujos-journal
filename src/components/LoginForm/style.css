@@ -14,6 +14,11 @@
 	font-family: "Maax Rounded";
 }
 
+.LoginFieldsWrapper p{
+	font-size: 14px;
+	
+}
+
 .LoginFieldsWrapper{
 	width: 87%;
 }

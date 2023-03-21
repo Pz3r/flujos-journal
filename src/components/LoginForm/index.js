@@ -44,6 +44,9 @@ const LoginForm = ({GoNav})=>{
 	return (
 		<div className="LoginForm">
 			<div className='LoginFieldsWrapper'>
+				<div style={{width: "100%", marginBottom:"10px"}}>
+					<p>{Login.Reminder[UserLang]}</p>
+				</div>
 				{badLogin?<div style={{width: "100%", color: "red", marginBottom:"10px"}}>
 					{Login.Incorrect[UserLang]}
 				</div>:null}

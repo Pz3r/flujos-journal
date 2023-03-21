@@ -338,6 +338,11 @@ export const Common = {
 
 
 export const Login = {
+	Reminder:{
+		"en": "Please use your RWGPS credentials to log in.",
+		"es": "Utilice credenciales de RWGPS para acceder a la app.",
+		"zh": "请使用您的 RWGPS 凭据登录。",
+	},
 	Email:{
 		"en": "Email",
 		"es": "Correo electrónico",
