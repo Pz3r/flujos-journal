@@ -22,12 +22,15 @@ const LoginForm = ({GoNav})=>{
 
 	const FormSubmit = (e)=>{
 		LoginRWGPS(inputField.email, inputField.password).then(data=>{
+			console.log(data)
 			if(data.status === 401){
 				setBadLogin(true)
 				return
 			}
-			localStorage.setItem("rwgps", JSON.stringify(data.user))
-			window.location.href = '/?username='+ encodeURIComponent(data.user.id) + "&name=" + encodeURIComponent(data.user.name) + "&loc=BA"
+			return data.json()
+		}).then((userjson)=>{
+			localStorage.setItem("rwgps", JSON.stringify(userjson.user))
+			window.location.href = '/?username='+ encodeURIComponent(userjson.user.id) + "&name=" + encodeURIComponent(userjson.user.name) + "&loc=BA"
 			//navigate('/?username='+ encodeURIComponent(data.user.id) + "&name=" + encodeURIComponent(data.user.name))
 		}).catch(error=>{
 			console.log(error)

@@ -31,7 +31,7 @@ const Data =  ({children}) => {
 	const HasUserID = QueryInfo.username
 	let prevLogin = localStorage.getItem("rwgps")
 	
-	if(prevLogin != null && !HasUserID){
+	if(prevLogin != null && !HasUserID && prevLogin !== undefined){
 		let userData = JSON.parse(prevLogin)
 		window.location.href = '/?username='+ encodeURIComponent(userData.id) + "&name=" + encodeURIComponent(userData.name) + "&loc=BA"
 		UserLocation = "BA"
