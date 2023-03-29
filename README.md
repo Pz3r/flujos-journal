@@ -36,5 +36,12 @@ The production site is hosted in an S3 bucket that is distributed with CloudFron
 - [@radialbalance](https://github.com/radialbalance)
 - [@raganmd](https://github.com/raganmd)
 
+## RideWithGPS Login Lambda Function
+In the lambda directory is a lambda function that is to be manually deployed. This function is a proxy login for the RideWithGPS API. 
 
+An environment variable must be configured for the RideWithGPS API Key. 
+
+`RWGPS_KEY` should be set to be the RideWithGPS API Key
+
+---
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
