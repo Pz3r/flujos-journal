@@ -45,7 +45,7 @@ const Data =  ({children}) => {
 				<h1>{LandingPageCopy.Error.Heading[UserLang]}</h1>
 				<div style={{marginTop: "20px"}}>
 					<h2>{LandingPageCopy.Error.Subheading1[UserLang]}</h2>
-					<h2>{LandingPageCopy.Error.Subheading2[UserLang]}<a style={{color: "#eeeeee"}} href="https://app.cibic.bike/rwgps">app.cibic.bike/rwgps</a></h2>
+					<h2>{LandingPageCopy.Error.Subheading2[UserLang]}<a style={{color: "#eeeeee"}} href="https://diario.pedaludico.net/rwgps">diario.pedaludico.net/rwgps</a></h2>
 				</div>
 			</div>
 			<div className={classNames("uploadSheild", {"Active": Uploading})}> 

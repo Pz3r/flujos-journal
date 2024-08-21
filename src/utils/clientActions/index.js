@@ -1,11 +1,11 @@
-const JOURNAL_API_ENDPOINT = "https://73oajmp3pd.execute-api.us-west-1.amazonaws.com/prod"
-const JOURNAL_API_KEY = "xOsPBbAKQjAnfmQ11O2haoocwbwXZ7map1cEUcgf"
+const JOURNAL_API_ENDPOINT = "https://flq23jtp9l.execute-api.us-west-1.amazonaws.com/beta"
+const JOURNAL_API_KEY = "yqrx6sHO1Y6XYJqUqYANNmAp87XgBpa6Et5Tqibh"
 
-const RIDE_WITH_GPS_ENDPOINT = "https://2yzayoxojpogfdwufk723fhej40arhdf.lambda-url.us-west-1.on.aws/"
+const RIDE_WITH_GPS_ENDPOINT = "https://zcs7uiru7jshapbtht2acdcszy0qmztf.lambda-url.us-west-1.on.aws/"
 
 
-const PHOTO_ENDPOINT = "https://rme2z0gw62.execute-api.us-west-1.amazonaws.com/prod/"
-const PHOTO_API_KEY = "xOsPBbAKQjAnfmQ11O2haoocwbwXZ7map1cEUcgf"
+const PHOTO_ENDPOINT = "https://xuqy0uxnfh.execute-api.us-west-1.amazonaws.com/beta"
+const PHOTO_API_KEY = "yqrx6sHO1Y6XYJqUqYANNmAp87XgBpa6Et5Tqibh"
 
 export const SubmitData = (Data)=>{
     return fetch(JOURNAL_API_ENDPOINT, {

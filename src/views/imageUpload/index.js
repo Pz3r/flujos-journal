@@ -35,24 +35,47 @@ const ImageUpload = (props) => {
             SetUploading(true)
             let operations = []
             var ts = Date.now()
-            let imagesName = []
             for(const [index, image] of images.entries()){
                 var extension = image.name.split('.').pop()
                 let imageName = QueryInfo.username+"/"+ts+"."+index+"."+extension
-                imagesName.push(imageName)
                 operations.push(PutImage(imageName, image))
-            }  
-            var journalType = "reflection"
-            if (FromLive){
-                journalType = "live"
-            }
-            let time = new Date().toISOString().replace('Z','+00:00')
-            operations.push( SubmitData( {type: journalType, onlyImages: true,  images:imagesName, userId: QueryInfo.username, paveData:QueryInfo, time:time, role: QueryInfo.role}) )
-            Promise.allSettled(operations).then(response=>{
+            }      
+            Promise.allSettled(operations).then(async (responses) => {
                 SetUploading(false)
-                console.log('upload complete', response )
-                setImages(null)
-                navigate('/thankyou')
+                //console.log('upload complete', responses)
+                let imagesName = []
+                for (let res of responses) {
+                  console.log(`===== res.status =====`)
+                  console.log(res.status)
+                  console.log(`===== res.value.text =====`)
+                  /*
+                  res.value.text().then(body => {
+                    console.log(body)
+                    imagesName.push(body)
+                  });
+                  */
+                 if (res.status === 'fulfilled') {
+                    let tempImageName = await res.value.text()
+                    console.log(tempImageName)
+                    imagesName.push(tempImageName)
+                  }
+                }
+
+                console.log(`===== imagesName =====`)
+                console.log(imagesName)
+
+                var journalType = "reflection"
+                if (FromLive){
+                    journalType = "live"
+                }
+                
+                let time = new Date().toISOString().replace('Z','+00:00')
+                SubmitData({type: journalType, onlyImages: true,  images:imagesName, userId: QueryInfo.username, paveData:QueryInfo, time:time, role: QueryInfo.role}).then(response => {
+                  console.log(`===== response.status =====`)
+                  console.log(response.status)
+                  setImages(null)
+                  navigate('/thankyou')
+                })
             })
         }
     }
