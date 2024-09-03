@@ -19,7 +19,7 @@ const Home = ()=>{
 
 	const NavigationMenuItems = [
 		{label: LandingPageCopy.JournalingMenuHeading[UserLang], 	logo:book, color: "#00B74F", path: "/reflection"},
-		{label: LandingPageCopy.LiveModeMenuHeading[UserLang], 		logo:radio, color: "#5289C7", path: "/live"},
+		//{label: LandingPageCopy.LiveModeMenuHeading[UserLang], 		logo:radio, color: "#5289C7", path: "/live"},
 		{label: LandingPageCopy.PhotoUploadMenuHeading[UserLang], 	logo:upload, color: "#882E72", path: "/upload"},
 		{label: LandingPageCopy.InterpretiveCartographyHeading[UserLang], logo:grid, color: "#777", path: "https://flujos.pedaludico.net/", external:true}
 	]

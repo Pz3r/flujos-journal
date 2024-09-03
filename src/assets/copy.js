@@ -23,7 +23,7 @@ export const LandingPageCopy = {
 	},
 	JournalingMenuHeading:{
 		"en": "Ride Journaling",
-		"es": "Diario de viaje",
+		"es": "Bitácora",
 		"zh": "騎行記錄",
 	},
 	LiveModeMenuHeading:{
@@ -82,9 +82,9 @@ export const AboutPage = {
 		"zh": "CiBiC 是由加州大學洛杉磯分校指導，國家科學基金會資助等，一項合作研究的專案。 CiBiC 研究如何扶助支援洛杉磯的自行車通勤。",
 	},
 	p3:{
-		"en": "To learn more about getting involved with CiBiC please <a href='https://cibic.bike/'>visit our website!</a>",
-		"es": "Para conocer más acerca de cómo participar en CiBiC <a href='https://cibic.bike/'>¡visita nuestro Website!</a>",
-		"zh": "若您想瞭解更多有關參與 CiBiC 的資訊，<a href='https://cibic.bike/'>請造訪我們的網站！</a>",
+		"en": "To learn more about getting involved with CiBiC please <a href='http://pedaludico.org/tiki-index.php'>visit our website!</a>",
+		"es": "Para conocer más acerca de cómo participar en CiBiC <a href='http://pedaludico.org/tiki-index.php'>¡visita nuestro Website!</a>",
+		"zh": "若您想瞭解更多有關參與 CiBiC 的資訊，<a href='http://pedaludico.org/tiki-index.php'>請造訪我們的網站！</a>",
 	},
 	LocationHeading:{
 		"en": "Key Locations",
