@@ -11,7 +11,7 @@ import './style.css'
 import { ThankYouPage } from "../../assets/copy";
 
 const ThankYou = () => {
-    const {UserLang, UserLocation} = useContext(DataContext)
+    const {UserLang} = useContext(DataContext)
 
 
     return (
