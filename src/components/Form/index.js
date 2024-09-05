@@ -11,9 +11,7 @@ const Satisfaction = (Answers, onAnswer, Options, lang)=>{
 	return(
 	<div className='Satisfaction'>
 		{Options.map((e, idx)=>(
-			<div key={e.label[lang]} className={classNames('Option', {'Selected': Answers===idx})} onClick={()=>onAnswer(idx)}>
-				<img alt={e.label[lang]+" face"} src={e.face}/>
-				<span className='Labels'>—</span>
+			<div key={e.label[lang]} className={classNames('Option', {'Selected': Answers===idx})} onClick={()=>onAnswer(idx)}>				
 				<span className='Labels'>{e.label[lang]}</span>
 			</div>
 		))}

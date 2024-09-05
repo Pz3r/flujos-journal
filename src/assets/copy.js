@@ -1,7 +1,7 @@
 export const LandingPageCopy = {
 	Title:{
 		"en": "FLOWS",
-		"es": "FLOWS",
+		"es": "BITÁCORA",
 		"zh": "FLOWS",
 	},
 	Location:{
@@ -18,7 +18,7 @@ export const LandingPageCopy = {
 	},
 	InterpretiveCartographyHeading:{
 		"en": "Interpretive Cartography",
-		"es": "Cartografía Interpretativa",
+		"es": "Cartografía",
 		"zh": "解释性制图",
 	},
 	JournalingMenuHeading:{
@@ -33,7 +33,7 @@ export const LandingPageCopy = {
 	},
 	PhotoUploadMenuHeading:{
 		"en": "Photo Upload",
-		"es": "Subir foto",
+		"es": "Subida de fotos",
 		"zh": "照片上載",
 	},
 	ArtworkDetailsMenuHeading:{
@@ -63,7 +63,7 @@ export const LandingPageCopy = {
 export const AboutPage = {
 	Title:{
 		"en": "FLOWS",
-		"es": "Flows",
+		"es": "Flujos",
 		"zh": "",
 	},
 	Heading:{
@@ -73,17 +73,17 @@ export const AboutPage = {
 	},
 	p1:{
 		"en": "CiBiC stands for Civic Bicycle Commuting and is a pilot transportation research project to encourage people to try commuting to work on bicycles in groups. It’s like carpooling but on bikes! The goal is to create a community-driven group bicycling system.",
-		"es": "CiBiC: Civic Bicycle Commuting. Es un proyecto de investigación sobre transporte, en fase piloto, que busca impulsar a la gente a trasladarse grupalmente al trabajo en bicicleta.",
+		"es": "Bitácora es el registro de cada experiencia de nuestras pedaleadas, donde consideramos no solo el rastro de cada pedaleante sino algunas observaciones particulares.",
 		"zh": "CiBiC 全名為 Civic Bicycle Commuting，是一項試點交通研究專案，旨在鼓勵人們嘗試以自行車團騎方式上下班。這就像拼車共乘，而且是騎自行車！此目標是創建一個以社群力量為主的團體自行車騎乘系統。",
 	},
 	p2:{
 		"en": "CiBiC is a collaborative research project led by UCLA and funded by the National Science Foundation. CiBiC studies how to support bicycle commuting in L.A.",
-		"es": "CiBiC es un proyecto de investigación participativo dirigido por UCLA, con el apoyo financiero de la National Science Foundation. CiBiC estudia cómo apoyar el traslado diario en bicicleta.",
+		"es": "Como resultado se construyen diferentes cartografías. Cada evento que se realiza se formula con variables específicas que genera una encuesta, que a su vez pretende registrar la expresión colectiva de la pedaleada.",
 		"zh": "CiBiC 是由加州大學洛杉磯分校指導，國家科學基金會資助等，一項合作研究的專案。 CiBiC 研究如何扶助支援洛杉磯的自行車通勤。",
 	},
 	p3:{
 		"en": "To learn more about getting involved with CiBiC please <a href='http://pedaludico.org/tiki-index.php'>visit our website!</a>",
-		"es": "Para conocer más acerca de cómo participar en CiBiC <a href='http://pedaludico.org/tiki-index.php'>¡visita nuestro Website!</a>",
+		"es": "Para obtener más información de BITACORA o ver las CARTOGRAFIAS generadas colectivamente, visite nuestro <a href='http://pedaludico.org/tiki-index.php'>sitio web de pedaludico</a>.",
 		"zh": "若您想瞭解更多有關參與 CiBiC 的資訊，<a href='http://pedaludico.org/tiki-index.php'>請造訪我們的網站！</a>",
 	},
 	LocationHeading:{
@@ -117,33 +117,33 @@ export const AboutPage = {
 export const Satisfaction = {
 	Prompt:{
 		"en": "Rate your commute satisfaction:",
-		"es": "Evalúa tu satisfacción en el traslado",
+		"es": "Qué te motivo a hacer esta pedaleada",
 		"zh": "評價您的通勤滿意度：",
 	},
 	Options:[
 		{
 			"en": "Terrible",
-			"es": "Terrible",
+			"es": "Curiosidad",
 			"zh": "糟透了",
 		},
 		{
 			"en": "Bad",
-			"es": "Malo",
+			"es": "Activismo",
 			"zh": "不太好",
 		},
 		{
 			"en": "Okay",
-			"es": "Okay",
+			"es": "Placer",
 			"zh": "還可以",
 		},
 		{
 			"en": "Good",
-			"es": "Bueno",
+			"es": "Desafío",
 			"zh": "蠻不錯",
 		},
 		{
 			"en": "Great",
-			"es": "Genial",
+			"es": "Diversión",
 			"zh": "非常棒",
 		}
 	]
@@ -152,53 +152,53 @@ export const Satisfaction = {
 export const RideCharacteristics = {
 	Prompt:{
 		"en": "Select all the characteristics of your ride:",
-		"es": "Selecciona las características de tu ride",
+		"es": "Cómo percibiste la vuelta a la Ciudad",
 		"zh": "選取您騎行中所有的特色：",
 	},
 	Options:[
 		{
 			"en": "Healthy",
-			"es": "Saludable",
+			"es": "Charlatana",
 			"zh": "健康",
 		},
 		{
 			"en": "Safe",
-			"es": "Seguro",
+			"es": "Segura",
 			"zh": "安全",
 		},
 		{
 			"en": "Playful",
-			"es": "Divertido",
+			"es": "Divertida",
 			"zh": "有趣",
 		},
 		{
 			"en": "Relaxing",
-			"es": "Relajante",
+			"es": "Llevadera",
 			"zh": "舒壓",
 		},
 		{
 			"en": "Liberating",
-			"es": "Liberador",
+			"es": "Inspiradora",
 			"zh": "自由",
 		},
 		{
 			"en": "Easy",
-			"es": "Simple",
+			"es": "Abrumadora",
 			"zh": "輕鬆",
 		},
 		{
 			"en": "Slow",
-			"es": "Lento",
+			"es": "Lenta",
 			"zh": "耗時",
 		},
 		{
 			"en": "Hazardous",
-			"es": "Peligroso",
+			"es": "Peligrosa",
 			"zh": "有害",
 		},
 		{
 			"en": "Tiring",
-			"es": "Cansado",
+			"es": "Cansadora",
 			"zh": "疲憊",
 		},
 		{
@@ -208,12 +208,12 @@ export const RideCharacteristics = {
 		},
 		{
 			"en": "Rushed",
-			"es": "Apurado",
+			"es": "Apurada",
 			"zh": "倉促",
 		},
 		{
 			"en": "Unsafe",
-			"es": "Inseguro",
+			"es": "Insegura",
 			"zh": "危險",
 		}
 	]
@@ -222,7 +222,7 @@ export const RideCharacteristics = {
 export const ShortResponse = {
 	Prompt:{
 		"en": "Describe your ride with one word or short phrase:",
-		"es": "Describe tu viaje en una palabra o frase corta",
+		"es": "Escribi una palabra o frase breve acerca de esta experiencia colectiva:",
 		"zh": "用一個字或片語描述說明您的騎行：",
 	},
 	Placeholder:{
@@ -235,7 +235,7 @@ export const ShortResponse = {
 export const Color = {
 	Prompt:{
 		"en": "What color best expresses how you feel about your last CiBiC ride?",
-		"es": "¿Qué color expresa cómo te sientes con tu último viaje con CiBiC?",
+		"es": "Pedalear crea una forma en el mapa coleactivo. ¿Qué color te gustaria para repesentar tu pedaleada en el mismo.",
 		"zh": "哪一種顏色最能表達您對於最近一次 CiBiC 騎行的感受？",
 	},
 	cta:{
@@ -248,7 +248,7 @@ export const Color = {
 export const Photos = {
 	Prompt:{
 		"en": "Upload photos of your ride:",
-		"es": "Sube fotos de tu viaje",
+		"es": "Subi fotos de la pedaleada:",
 		"zh": "上載您騎行的照片：",
 	},
 	optional:{
@@ -271,12 +271,12 @@ export const Photos = {
 export const ThankYouPage = {
 	header:{
 		"en": "Thank you!",
-		"es": "Gracias!",
+		"es": "¡Gracias por participar!",
 		"zh": "謝謝您！",
 	},
 	information:{
 		"en": "Your submissions were added to our CiBiC cartography system.",
-		"es": "Tu envío fue agregado a nuestro sistema cartográfico de CiBiC",
+		"es": "La información volcada se sumo al sistema de cartografía de FLUJOS.",
 		"zh": "您傳送的資料已新增至我們的 CiBiC 製圖系統。",
 	},
 	caption:{

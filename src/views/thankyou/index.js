@@ -19,10 +19,6 @@ const ThankYou = () => {
                 <Header HasBack Invert ShowTitle={false} BackGoesTo={'/'}/>
                 <Form Prompt={ThankYouPage.header}>
                     <h2>{ThankYouPage.information[UserLang]}</h2>
-                    <div className="imageContainer">
-                        <img alt="snapshot of artwork" src={"https://d1a1668ubdx5yp.cloudfront.net/renderings/"+UserLocation+"-recent.jpg"}/>
-                    </div>
-                    <div className="caption">{ThankYouPage.caption[UserLang]}</div>
                 </Form>
 				<Footer Inverted/>
             </div>
