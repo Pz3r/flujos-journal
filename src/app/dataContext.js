@@ -10,13 +10,13 @@ const Data =  ({children}) => {
 	var search = window.location.search.substring(1);
 	var fromQS = new URLSearchParams(search)
 	const [QueryInfo] = useState({role:fromQS.get('role'), username: fromQS.get('username'), name: fromQS.get('name'), qs: search})
-	var lang = "en"
+	var lang = "es"
 	var tempLang = fromQS.get('lang')
 	if (tempLang){
 		lang = tempLang.split('-')[0]
 	}
 	if (!['en', 'es', 'zh'].includes(lang)){
-		lang = 'en'
+		lang = 'es'
 	}
 
 	var UserLocation = fromQS.get('loc')
