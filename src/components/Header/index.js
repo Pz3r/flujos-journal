@@ -19,8 +19,7 @@ const Header = ({HasBack, HasCamera, PageName, Location, MainPage, Invert, ShowP
 		<div className={classNames("Header", {"Inverted": Invert})}>
 			{MainPage?(
 			<div className="Hero">
-				<img alt="Cibic Logo" className="Logo" src={cibicLogo}/>
-				<h1>{LandingPageCopy.Title[UserLang]}</h1>
+				<img alt="Cibic Logo" className="Logo" src={cibicLogo}/>				
 				<h2>{Location}</h2>
 			</div>
 			):(
