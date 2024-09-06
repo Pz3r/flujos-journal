@@ -1,7 +1,7 @@
 export const LandingPageCopy = {
 	Title:{
 		"en": "FLOWS",
-		"es": "BITÁCORA",
+		"es": "FLUJOS",
 		"zh": "FLOWS",
 	},
 	Location:{
@@ -235,7 +235,7 @@ export const ShortResponse = {
 export const Color = {
 	Prompt:{
 		"en": "What color best expresses how you feel about your last CiBiC ride?",
-		"es": "Pedalear crea una forma en el mapa coleactivo. ¿Qué color te gustaria para repesentar tu pedaleada en el mismo.",
+		"es": "Pedalear crea una forma en el mapa coleactivo. ¿Qué color te gustaria para representar tu pedaleada en el mismo.",
 		"zh": "哪一種顏色最能表達您對於最近一次 CiBiC 騎行的感受？",
 	},
 	cta:{
