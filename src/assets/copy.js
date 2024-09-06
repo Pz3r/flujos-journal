@@ -83,7 +83,7 @@ export const AboutPage = {
 	},
 	p3:{
 		"en": "To learn more about getting involved with CiBiC please <a href='http://pedaludico.org/tiki-index.php'>visit our website!</a>",
-		"es": "Para obtener más información de BITACORA o ver las CARTOGRAFIAS generadas colectivamente, visite nuestro <a href='http://pedaludico.org/tiki-index.php'>sitio web de pedaludico</a>.",
+		"es": "Para obtener más información de BITACORA o ver las CARTOGRAFIAS generadas colectivamente, visite nuestro <a href='http://pedaludico.org/tiki-index.php'>sitio web de pedalúdico</a>.",
 		"zh": "若您想瞭解更多有關參與 CiBiC 的資訊，<a href='http://pedaludico.org/tiki-index.php'>請造訪我們的網站！</a>",
 	},
 	LocationHeading:{
