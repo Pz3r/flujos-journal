@@ -18,7 +18,7 @@ export const LandingPageCopy = {
 	},
 	InterpretiveCartographyHeading:{
 		"en": "Interpretive Cartography",
-		"es": "Cartografía",
+		"es": "Ver cartografía",
 		"zh": "解释性制图",
 	},
 	JournalingMenuHeading:{
@@ -33,7 +33,7 @@ export const LandingPageCopy = {
 	},
 	PhotoUploadMenuHeading:{
 		"en": "Photo Upload",
-		"es": "Subida de fotos",
+		"es": "Subir foto",
 		"zh": "照片上載",
 	},
 	ArtworkDetailsMenuHeading:{
@@ -117,33 +117,33 @@ export const AboutPage = {
 export const Satisfaction = {
 	Prompt:{
 		"en": "Rate your commute satisfaction:",
-		"es": "Qué te motivo a hacer esta pedaleada",
+		"es": "Elegí la palabra que más identifique esta pedaleada. (1 de 5)",
 		"zh": "評價您的通勤滿意度：",
 	},
 	Options:[
 		{
 			"en": "Terrible",
-			"es": "Curiosidad",
+			"es": "Estructurada",
 			"zh": "糟透了",
 		},
 		{
 			"en": "Bad",
-			"es": "Activismo",
+			"es": "Orgánica",
 			"zh": "不太好",
 		},
 		{
 			"en": "Okay",
-			"es": "Placer",
+			"es": "Retorcida",
 			"zh": "還可以",
 		},
 		{
 			"en": "Good",
-			"es": "Desafío",
+			"es": "Mutante",
 			"zh": "蠻不錯",
 		},
 		{
 			"en": "Great",
-			"es": "Diversión",
+			"es": "Confusa",
 			"zh": "非常棒",
 		}
 	]
@@ -152,69 +152,59 @@ export const Satisfaction = {
 export const RideCharacteristics = {
 	Prompt:{
 		"en": "Select all the characteristics of your ride:",
-		"es": "Cómo percibiste la vuelta a la Ciudad",
+		"es": "Como percibiste la pedaludikeada (10 opciones)",
 		"zh": "選取您騎行中所有的特色：",
 	},
 	Options:[
 		{
 			"en": "Healthy",
-			"es": "Charlatana",
+			"es": "Lenta",
 			"zh": "健康",
 		},
 		{
 			"en": "Safe",
-			"es": "Segura",
+			"es": "Vertiginosa",
 			"zh": "安全",
 		},
 		{
 			"en": "Playful",
-			"es": "Divertida",
+			"es": "Aburrida",
 			"zh": "有趣",
 		},
 		{
 			"en": "Relaxing",
-			"es": "Llevadera",
+			"es": "Divertida",
 			"zh": "舒壓",
 		},
 		{
 			"en": "Liberating",
-			"es": "Inspiradora",
+			"es": "Incomoda",
 			"zh": "自由",
 		},
 		{
 			"en": "Easy",
-			"es": "Abrumadora",
+			"es": "Inspiradora",
 			"zh": "輕鬆",
 		},
 		{
 			"en": "Slow",
-			"es": "Lenta",
+			"es": "Insegura",
 			"zh": "耗時",
 		},
 		{
 			"en": "Hazardous",
-			"es": "Peligrosa",
+			"es": "Consciente",
 			"zh": "有害",
 		},
 		{
 			"en": "Tiring",
-			"es": "Cansadora",
+			"es": "Alegre",
 			"zh": "疲憊",
 		},
 		{
 			"en": "Stressful",
-			"es": "Estresante",
+			"es": "Curiosa",
 			"zh": "壓力",
-		},
-		{
-			"en": "Rushed",
-			"es": "Apurada",
-			"zh": "倉促",
-		},
-		{
-			"en": "Unsafe",
-			"es": "Insegura",
-			"zh": "危險",
 		}
 	]
 }
@@ -222,12 +212,12 @@ export const RideCharacteristics = {
 export const ShortResponse = {
 	Prompt:{
 		"en": "Describe your ride with one word or short phrase:",
-		"es": "Escribi una palabra o frase breve acerca de esta experiencia colectiva:",
+		"es": "Detuviste tu mirada en algo en particular? Escribí una palabra o frase:",
 		"zh": "用一個字或片語描述說明您的騎行：",
 	},
 	Placeholder:{
 		"en": "My ride was...",
-		"es": "My viaje fue...",
+		"es": "................................",
 		"zh": "我的騎行是...",
 	}
 }
@@ -235,7 +225,7 @@ export const ShortResponse = {
 export const Color = {
 	Prompt:{
 		"en": "What color best expresses how you feel about your last CiBiC ride?",
-		"es": "Pedalear crea una forma en el mapa coleactivo. ¿Qué color te gustaria para representar tu pedaleada en el mismo.",
+		"es": "Selección de Color: Pedalear crea una forma en el mapa colectivo. ¿Qué color te gustaría para representar tu pedaludikeada?",
 		"zh": "哪一種顏色最能表達您對於最近一次 CiBiC 騎行的感受？",
 	},
 	cta:{
@@ -248,7 +238,7 @@ export const Color = {
 export const Photos = {
 	Prompt:{
 		"en": "Upload photos of your ride:",
-		"es": "Subi fotos de la pedaleada:",
+		"es": "Subir fotos",
 		"zh": "上載您騎行的照片：",
 	},
 	optional:{
