@@ -225,7 +225,7 @@ export const ShortResponse = {
 export const Color = {
 	Prompt:{
 		"en": "What color best expresses how you feel about your last CiBiC ride?",
-		"es": "Selección de Color: Pedalear crea una forma en el mapa colectivo. ¿Qué color te gustaría para representar tu pedaludikeada?",
+		"es": "Pedalear crea una forma en el mapa colectivo. ¿Qué color te gustaría para representar tu pedaludikeada?",
 		"zh": "哪一種顏色最能表達您對於最近一次 CiBiC 騎行的感受？",
 	},
 	cta:{
