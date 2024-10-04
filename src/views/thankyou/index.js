@@ -9,7 +9,7 @@ import { DataContext } from '../../app/dataContext';
 import './style.css'
 
 import { ThankYouPage } from "../../assets/copy";
-import cibicLogo from '../../assets/icons/cibic_logo.png';
+import sponsorLogo from '../../assets/icons/logofab.png';
 
 const ThankYou = () => {
     const {UserLang} = useContext(DataContext)
@@ -21,7 +21,7 @@ const ThankYou = () => {
                 <Form Prompt={ThankYouPage.header}>
                     <h2>{ThankYouPage.information[UserLang]}</h2>
                     <div className="imageContainer">
-                        <img alt="snapshot of artwork" src={cibicLogo}/>
+                        <img alt="snapshot of artwork" src={sponsorLogo}/>
                     </div>
                 </Form>
 				<Footer Inverted/>
